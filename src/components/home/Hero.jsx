@@ -8,16 +8,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background — hero image with overlay */}
-      <div className="absolute inset-0">
-        <img
-          src="/assets/hero/hero-bg.webp"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-white/85" />
-      </div>
-      <div className="absolute inset-0 gradient-mesh opacity-60" />
+      {/* Background — clean gradient mesh (no image wash) */}
+      <div className="absolute inset-0 gradient-mesh" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -28,65 +20,66 @@ export default function Hero() {
       />
 
       <div className="container-max section-padding !pt-16 !pb-8 lg:!pt-24 lg:!pb-16 relative">
-        {/* Centered hero content for impact */}
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-primary-600 text-xs font-semibold mb-6 animate-fade-in">
-            Your Trusted Tooling Partner
-          </p>
+        {/* Split layout: text left, image right */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-surface-900 leading-[1.08] tracking-tight animate-slide-up">
-            Precision Moulds{" "}
-            <span className="text-primary-500">&bull;</span> CNC Machining{" "}
-            <span className="text-primary-500">&bull;</span>{" "}
-            <span className="relative inline-block">
+          {/* Left — text content */}
+          <div className="text-center lg:text-left">
+            <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-primary-600 text-xs font-semibold mb-6 animate-fade-in">
+              Your Trusted Tooling Partner
+            </p>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-surface-900 leading-[1.08] tracking-tight animate-slide-up">
+              Precision Moulds,{" "}
               <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-                Injection Molding
-              </span>
-              <svg
-                className="absolute -bottom-2 left-0 w-full"
-                viewBox="0 0 200 8"
-                fill="none"
+                CNC Machining
+              </span>{" "}
+              &amp; Injection Molding
+            </h1>
+
+            <p
+              className="mt-6 text-lg lg:text-xl text-surface-800/70 leading-relaxed max-w-xl lg:mx-0 mx-auto animate-slide-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              Engineering excellence with 15+ years of experience in precision
+              injection mould design &amp; manufacturing
+            </p>
+
+            <div
+              className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8 animate-slide-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <Button
+                href="/quote"
+                variant="accent"
+                arrow
+                id="hero-get-quote-cta"
+                className="text-base px-8 py-3.5"
               >
-                <path
-                  d="M2 6c30-4 60-4 98-2s70 2 98-2"
-                  stroke="#ea580c"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  opacity="0.5"
-                />
-              </svg>
-            </span>
-          </h1>
+                Get a Quote
+              </Button>
+              <Button
+                href="/gallery"
+                variant="outline"
+                id="hero-view-work-cta"
+                className="text-base px-8 py-3.5"
+              >
+                View Our Work
+              </Button>
+            </div>
+          </div>
 
-          <p
-            className="mt-6 text-lg lg:text-xl text-surface-800/70 leading-relaxed max-w-2xl mx-auto animate-slide-up"
-            style={{ animationDelay: "0.1s" }}
-          >
-            Engineering excellence with 15+ years of experience in precision
-            injection mould design &amp; manufacturing
-          </p>
-
-          <div
-            className="flex flex-wrap justify-center gap-3 mt-8 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <Button
-              href="/quote"
-              variant="accent"
-              arrow
-              id="hero-get-quote-cta"
-              className="text-base px-8 py-3.5"
-            >
-              Get a Quote
-            </Button>
-            <Button
-              href="/gallery"
-              variant="outline"
-              id="hero-view-work-cta"
-              className="text-base px-8 py-3.5"
-            >
-              View Our Work
-            </Button>
+          {/* Right — hero image */}
+          <div className="relative animate-fade-in hidden lg:block">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary-500/10 border border-surface-200/50">
+              <img
+                src="/assets/hero/hero-bg.webp"
+                alt="Industrial manufacturing at Sharma Tools"
+                className="w-full h-[420px] object-cover"
+              />
+            </div>
+            {/* Decorative accent behind image */}
+            <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full rounded-2xl bg-gradient-to-br from-primary-500/20 to-accent-500/20" />
           </div>
         </div>
 
