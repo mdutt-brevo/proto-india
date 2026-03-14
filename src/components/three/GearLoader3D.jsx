@@ -6,6 +6,7 @@ import IndustrialGear from "./IndustrialGear";
 /**
  * GearLoader3D — a compact 3D gear animation for page loading states.
  * Two interlocking gears spinning in opposite directions.
+ * Uses the same realistic PBR materials as the hero scene.
  */
 export default function GearLoader3D() {
   return (
@@ -18,15 +19,17 @@ export default function GearLoader3D() {
             gl={{ antialias: true, alpha: true }}
             style={{ background: "transparent" }}
           >
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[3, 3, 3]} intensity={1} />
+            <ambientLight intensity={0.3} color="#94a3b8" />
+            <directionalLight position={[3, 3, 3]} intensity={1.2} color="#7d9bc1" />
+            <pointLight position={[-2, -1, 2]} intensity={0.8} color="#ff6b1a" distance={8} decay={2} />
 
             <IndustrialGear
               teeth={14}
               radius={0.9}
               depth={0.3}
               speed={0.8}
-              color="#1a56db"
+              color="#2d3f5e"
+              spokes={5}
               position={[-0.5, 0, 0]}
             />
             <IndustrialGear
@@ -34,15 +37,16 @@ export default function GearLoader3D() {
               radius={0.6}
               depth={0.3}
               speed={-1.12}
-              color="#ea580c"
+              color="#4a5568"
+              spokes={4}
               position={[0.8, 0.6, 0.01]}
             />
 
-            <Environment preset="studio" />
+            <Environment preset="warehouse" />
           </Canvas>
         </Suspense>
       </div>
-      <p className="text-sm text-surface-800/50 dark:text-white/40 font-mono tracking-wider uppercase">
+      <p className="text-sm th-subtle font-mono tracking-wider uppercase">
         Machining...
       </p>
     </div>

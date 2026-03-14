@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import {
   PenTool, Layers, Cog, Wrench, Factory, Lightbulb, ArrowRight,
 } from "lucide-react";
@@ -7,6 +8,8 @@ import { useInView } from "../../hooks/useInView";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 
+const SectionScene = lazy(() => import("../three/SectionScene"));
+
 const ICON_MAP = { PenTool, Layers, Cog, Wrench, Factory, Lightbulb };
 
 export default function ServicesSection() {
@@ -15,6 +18,11 @@ export default function ServicesSection() {
   return (
     <section className="section-padding bg-surface-50 dark:bg-surface-900/80 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-30" />
+
+      {/* 3D Background — CNC forge with sparks */}
+      <Suspense fallback={null}>
+        <SectionScene variant="forge" className="opacity-15 dark:opacity-25" />
+      </Suspense>
 
       <div className="container-max relative">
         <SectionHeading

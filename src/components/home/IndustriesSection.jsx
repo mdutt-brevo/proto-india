@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import {
   Smartphone, Car, Zap, Refrigerator, Package, Heart,
 } from "lucide-react";
@@ -7,6 +8,8 @@ import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import ToolpathDivider from "../ui/ToolpathDivider";
 
+const SectionScene = lazy(() => import("../three/SectionScene"));
+
 const ICON_MAP = { Smartphone, Car, Zap, Refrigerator, Package, Heart };
 
 export default function IndustriesSection() {
@@ -15,6 +18,11 @@ export default function IndustriesSection() {
   return (
     <section className="section-padding bg-surface-50 dark:bg-surface-900/80 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-20" />
+
+      {/* 3D Background — injection molding with granule flow */}
+      <Suspense fallback={null}>
+        <SectionScene variant="injection" className="opacity-15 dark:opacity-25" />
+      </Suspense>
 
       <div className="container-max relative">
         <SectionHeading
