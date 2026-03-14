@@ -30,7 +30,7 @@ export default function GearLoader() {
         </svg>
       </div>
 
-      <p className="text-sm text-surface-800/50 font-mono tracking-wider uppercase">
+      <p className="text-sm text-surface-800/50 dark:text-white/40 font-mono tracking-wider uppercase">
         Machining...
       </p>
     </div>

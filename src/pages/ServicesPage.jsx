@@ -14,13 +14,13 @@ const ICON_MAP = {
 
 function PageHero() {
   return (
-    <section className="relative overflow-hidden gradient-mesh">
+    <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
         <p className="text-sm font-semibold text-primary-500 mb-3">Services</p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-surface-900 leading-tight animate-slide-up">
+        <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Our Services
         </h1>
-        <p className="mt-4 text-lg text-surface-800/60 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+        <p className="mt-4 text-lg th-muted max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
           Complete Tooling Solutions from Design to Production
         </p>
       </div>
@@ -58,14 +58,14 @@ function ServiceCard({ service, index }) {
 
       {/* Content side */}
       <div className={`${!isEven ? "md:order-1" : ""}`}>
-        <h3 className="text-2xl font-extrabold text-surface-900">{service.title}</h3>
-        <p className="mt-3 text-surface-800/70 leading-relaxed">{service.shortDesc}</p>
+        <h3 className="text-2xl font-extrabold th-heading">{service.title}</h3>
+        <p className="mt-3 th-body-secondary leading-relaxed">{service.shortDesc}</p>
 
         <div className="mt-5">
-          <p className="text-sm font-bold text-surface-900 mb-2">Key Benefits:</p>
+          <p className="text-sm font-bold th-heading mb-2">Key Benefits:</p>
           <ul className="space-y-2">
             {service.features.map((f) => (
-              <li key={f} className="flex items-center gap-2.5 text-sm text-surface-800/70">
+              <li key={f} className="flex items-center gap-2.5 text-sm th-body-secondary">
                 <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                 {f}
               </li>
@@ -74,11 +74,11 @@ function ServiceCard({ service, index }) {
         </div>
 
         {service.capabilities && (
-          <div className="mt-4 p-3 rounded-lg bg-surface-50 border border-surface-100">
-            <p className="text-xs font-bold text-surface-800/50 uppercase tracking-wider mb-1">
+          <div className="mt-4 p-3 rounded-lg th-bg-inset border th-border">
+            <p className="text-xs font-bold th-subtle uppercase tracking-wider mb-1">
               Technical Capabilities
             </p>
-            <p className="text-sm text-surface-800/70">{service.capabilities}</p>
+            <p className="text-sm th-body-secondary">{service.capabilities}</p>
           </div>
         )}
       </div>
@@ -90,7 +90,7 @@ function ProcessSection() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding bg-surface-50">
+    <section className="section-padding th-bg-alt">
       <div className="container-max">
         <SectionHeading title="Our Process" />
         <div
@@ -105,14 +105,14 @@ function ProcessSection() {
               <div key={step.step} className="flex md:flex-col items-center md:items-center gap-4 md:gap-0 flex-1 text-center relative">
                 {/* Connector line (desktop) */}
                 {i < PROCESS_STEPS.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-primary-100" />
+                  <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-primary-100 dark:bg-primary-500/20" />
                 )}
                 <div className="relative z-10 w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center text-white font-heading font-bold shadow-lg shadow-primary-500/20 shrink-0">
                   {step.step}
                 </div>
                 <div className="md:mt-4">
-                  <h4 className="font-bold text-surface-900 text-sm">{step.title}</h4>
-                  <p className="text-xs text-surface-800/50 mt-1 max-w-[160px]">{step.description}</p>
+                  <h4 className="font-bold th-heading text-sm">{step.title}</h4>
+                  <p className="text-xs th-subtle mt-1 max-w-[160px]">{step.description}</p>
                 </div>
               </div>
             );
@@ -152,7 +152,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero />
-      <section className="section-padding bg-white">
+      <section className="section-padding th-bg-page">
         <div className="container-max space-y-20">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />

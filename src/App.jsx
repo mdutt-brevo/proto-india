@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
+import { DarkModeProvider } from "./hooks/useDarkMode";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -21,8 +22,10 @@ function ScrollToTop() {
   return null;
 }
 
-// Interlocking gear animation — replaces generic spinner
-const GearLoader = lazy(() => import("./components/ui/GearLoader"));
+// 3D interlocking gear animation for page loading
+// Falls back to SVG gear if 3D takes time to initialize
+const GearLoader3D = lazy(() => import("./components/three/GearLoader3D"));
+const GearLoaderSVG = lazy(() => import("./components/ui/GearLoader"));
 
 function PageLoader() {
   return (
@@ -33,17 +36,24 @@ function PageLoader() {
         </div>
       }
     >
-      <GearLoader />
+      <Suspense fallback={<GearLoaderSVG />}>
+        <GearLoader3D />
+      </Suspense>
     </Suspense>
   );
 }
 
 function AppLayout() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-surface-900 transition-colors duration-300">
       <ScrollToTop />
       <Navbar />
-      <main className="flex-1">
+      {/* Home hero goes full-bleed behind the fixed navbar.
+          Other pages need top padding to clear the navbar. */}
+      <main className={`flex-1 ${isHome ? "" : "pt-[72px]"}`}>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -63,8 +73,10 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AppLayout />
-    </BrowserRouter>
+    <DarkModeProvider>
+      <BrowserRouter>
+        <AppLayout />
+      </BrowserRouter>
+    </DarkModeProvider>
   );
 }

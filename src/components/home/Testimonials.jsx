@@ -1,17 +1,26 @@
 import { Star, Quote } from "lucide-react";
 import { TESTIMONIALS } from "../../data/siteData";
+import { VIDEOS } from "../../data/videoSources";
 import { useInView } from "../../hooks/useInView";
 import SectionHeading from "../ui/SectionHeading";
+import VideoBackground from "../ui/VideoBackground";
 
 export default function Testimonials() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding steel-section relative overflow-hidden">
-      {/* Dark blueprint grid */}
-      <div className="absolute inset-0 blueprint-grid-dark opacity-60" />
+    <section className="section-padding relative overflow-hidden">
+      {/* Factory floor ambient video — always visible (dark section) */}
+      <VideoBackground
+        src={VIDEOS.factory}
+        fallbackSrc={VIDEOS.factoryHD}
+        overlay="bg-black/75"
+      />
 
-      {/* Riveted edge along top */}
+      {/* Blueprint grid on top of video */}
+      <div className="absolute inset-0 blueprint-grid-dark opacity-40" />
+
+      {/* Riveted edge */}
       <div className="absolute top-0 left-0 right-0 riveted-edge" />
 
       <div className="container-max relative">
@@ -21,23 +30,18 @@ export default function Testimonials() {
           className="[&_h2]:text-white [&_p]:text-white/60"
         />
 
-        <div
-          ref={ref}
-          className="grid md:grid-cols-3 gap-6"
-        >
+        <div ref={ref} className="grid md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
-              className={`bg-white/[0.05] backdrop-blur-sm rounded-2xl p-6 lg:p-8
+              className={`bg-white/[0.06] backdrop-blur-md rounded-2xl p-6 lg:p-8
                 border border-white/10 flex flex-col relative overflow-hidden
-                hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300
+                hover:border-white/20 hover:bg-white/[0.1] transition-all duration-300
                 ${isInView ? "animate-slide-up" : "opacity-0"}`}
               style={{ animationDelay: `${i * 0.15}s` }}
             >
-              {/* Large decorative quote mark */}
               <Quote className="absolute top-4 right-4 w-10 h-10 text-white/[0.05]" />
 
-              {/* Stars */}
               <div className="flex gap-0.5 mb-4">
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star
@@ -60,7 +64,6 @@ export default function Testimonials() {
                 </p>
               </div>
 
-              {/* Corner bracket — technical drawing touch */}
               <svg className="absolute bottom-3 left-3 w-5 h-5 text-white/10" viewBox="0 0 20 20">
                 <path d="M0,8 L0,0 L8,0" fill="none" stroke="currentColor" strokeWidth="1" />
               </svg>

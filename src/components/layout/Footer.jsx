@@ -4,11 +4,9 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-900 text-white/80 relative overflow-hidden">
-      {/* Dark blueprint grid background */}
+    <footer className="bg-surface-900 dark:bg-black text-white/80 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid-dark opacity-40" />
 
-      {/* Main Grid */}
       <div className="container-max section-padding !py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
@@ -32,7 +30,6 @@ export default function Footer() {
               Specializing in precision injection mould design, manufacturing,
               and CNC machining services.
             </p>
-            {/* ISO badge — industrial certification mark */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/10 rounded text-xs font-mono text-white/40">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               ISO 9001:2015 CERTIFIED
@@ -98,7 +95,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar — with riveted edge */}
       <div className="border-t border-white/10 relative riveted-edge">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <span>

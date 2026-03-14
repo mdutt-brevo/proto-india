@@ -11,13 +11,13 @@ const VALUE_ICONS = { Award, Clock, Lightbulb, Shield };
 
 function PageHero() {
   return (
-    <section className="relative overflow-hidden gradient-mesh">
+    <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
         <p className="text-sm font-semibold text-primary-500 mb-3">About Us</p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-surface-900 leading-tight animate-slide-up">
+        <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           About Sharma Tools
         </h1>
-        <p className="mt-4 text-lg text-surface-800/60 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+        <p className="mt-4 text-lg th-muted max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
           Precision, Reliability, Continuous Improvement
         </p>
       </div>
@@ -28,7 +28,7 @@ function PageHero() {
 function StorySection() {
   const [ref, isInView] = useInView();
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding th-bg-page">
       <div className="container-max">
         <div
           ref={ref}
@@ -44,9 +44,9 @@ function StorySection() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-extrabold text-surface-900 mb-6">Our Story</h2>
+            <h2 className="text-3xl font-extrabold th-heading mb-6">Our Story</h2>
             {ABOUT_STORY.paragraphs.map((p, i) => (
-              <p key={i} className="text-surface-800/70 leading-relaxed mb-4">{p}</p>
+              <p key={i} className="th-body-secondary leading-relaxed mb-4">{p}</p>
             ))}
           </div>
         </div>
@@ -58,7 +58,7 @@ function StorySection() {
 function MissionVision() {
   const [ref, isInView] = useInView();
   return (
-    <section className="section-padding bg-surface-50">
+    <section className="section-padding th-bg-alt">
       <div
         ref={ref}
         className={`container-max transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -78,13 +78,13 @@ function MissionVision() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8 border border-surface-100">
-            <h3 className="text-xl font-bold text-surface-900 mb-4">Our Mission</h3>
-            <p className="text-surface-800/70 leading-relaxed">{ABOUT_STORY.mission}</p>
+          <div className="th-bg-card rounded-2xl p-8 border th-border">
+            <h3 className="text-xl font-bold th-heading mb-4">Our Mission</h3>
+            <p className="th-body-secondary leading-relaxed">{ABOUT_STORY.mission}</p>
           </div>
-          <div className="bg-white rounded-2xl p-8 border border-surface-100">
-            <h3 className="text-xl font-bold text-surface-900 mb-4">Our Vision</h3>
-            <p className="text-surface-800/70 leading-relaxed">{ABOUT_STORY.vision}</p>
+          <div className="th-bg-card rounded-2xl p-8 border th-border">
+            <h3 className="text-xl font-bold th-heading mb-4">Our Vision</h3>
+            <p className="th-body-secondary leading-relaxed">{ABOUT_STORY.vision}</p>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@ function MissionVision() {
 function CoreValuesSection() {
   const [ref, isInView] = useInView();
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding th-bg-page">
       <div className="container-max">
         <SectionHeading title="Our Core Values" />
         <div
@@ -105,12 +105,12 @@ function CoreValuesSection() {
           {CORE_VALUES.map((val) => {
             const Icon = VALUE_ICONS[val.icon];
             return (
-              <div key={val.title} className="text-center p-6 rounded-2xl border border-surface-100 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 mx-auto rounded-xl bg-primary-50 flex items-center justify-center mb-4">
+              <div key={val.title} className="text-center p-6 rounded-2xl border th-border hover:shadow-lg transition-shadow th-bg-card">
+                <div className="w-12 h-12 mx-auto rounded-xl th-bg-primary-soft flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-primary-500" />
                 </div>
-                <h4 className="font-bold text-surface-900 text-sm">{val.title}</h4>
-                <p className="text-xs text-surface-800/50 mt-1">{val.description}</p>
+                <h4 className="font-bold th-heading text-sm">{val.title}</h4>
+                <p className="text-xs th-subtle mt-1">{val.description}</p>
               </div>
             );
           })}
@@ -123,7 +123,7 @@ function CoreValuesSection() {
 function TimelineSection() {
   const [ref, isInView] = useInView();
   return (
-    <section className="section-padding bg-surface-50">
+    <section className="section-padding th-bg-alt">
       <div className="container-max">
         <SectionHeading title="Our Journey" />
         <div
@@ -132,7 +132,7 @@ function TimelineSection() {
         >
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[27px] top-0 bottom-0 w-0.5 bg-primary-100" />
+            <div className="absolute left-[27px] top-0 bottom-0 w-0.5 bg-primary-100 dark:bg-primary-500/20" />
 
             {TIMELINE.map((item, i) => (
               <div key={item.year} className="relative flex gap-6 mb-10 last:mb-0">
@@ -141,8 +141,8 @@ function TimelineSection() {
                   <span className="text-white font-heading font-bold text-xs">{item.year}</span>
                 </div>
                 <div className="pt-3">
-                  <h4 className="font-bold text-surface-900">{item.title}</h4>
-                  <p className="text-sm text-surface-800/60 mt-1">{item.description}</p>
+                  <h4 className="font-bold th-heading">{item.title}</h4>
+                  <p className="text-sm th-muted mt-1">{item.description}</p>
                 </div>
               </div>
             ))}

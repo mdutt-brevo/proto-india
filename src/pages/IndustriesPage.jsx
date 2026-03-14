@@ -16,13 +16,13 @@ const ICON_MAP = {
 
 function PageHero() {
   return (
-    <section className="relative overflow-hidden gradient-mesh">
+    <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
         <p className="text-sm font-semibold text-primary-500 mb-3">Industries</p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-surface-900 leading-tight animate-slide-up">
+        <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Industries We Serve
         </h1>
-        <p className="mt-4 text-lg text-surface-800/60 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+        <p className="mt-4 text-lg th-muted max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
           Trusted by Leading Companies Across Diverse Sectors
         </p>
       </div>
@@ -34,7 +34,7 @@ function IndustryCards() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding th-bg-page">
       <div className="container-max">
         <div
           ref={ref}
@@ -47,7 +47,7 @@ function IndustryCards() {
             return (
               <div
                 key={ind.id}
-                className="group bg-surface-50 rounded-2xl overflow-hidden border border-surface-100 card-hover"
+                className="group th-bg-inset rounded-2xl overflow-hidden border th-border card-hover"
               >
                 {/* Industry image */}
                 <div className="relative h-40 overflow-hidden">
@@ -58,13 +58,13 @@ function IndustryCards() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute bottom-3 left-3 w-11 h-11 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                  <div className="absolute bottom-3 left-3 w-11 h-11 rounded-lg bg-white/90 dark:bg-surface-800/90 backdrop-blur-sm flex items-center justify-center shadow-md">
                     <Icon className="w-6 h-6 text-primary-500" />
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-bold text-surface-900">{ind.title}</h3>
-                  <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
+                  <h3 className="text-lg font-bold th-heading">{ind.title}</h3>
+                  <p className="mt-2 text-sm th-muted leading-relaxed">
                     {ind.description}
                   </p>
                 </div>
@@ -81,7 +81,7 @@ function WhyIndustries() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding bg-surface-50">
+    <section className="section-padding th-bg-alt">
       <div className="container-max">
         <SectionHeading title="Why Industries Choose Sharma Tools" />
         <div
@@ -93,13 +93,13 @@ function WhyIndustries() {
           {INDUSTRY_STRENGTHS.map((item) => {
             const Icon = ICON_MAP[item.icon];
             return (
-              <div key={item.title} className="bg-white rounded-2xl p-6 border border-surface-100 flex gap-4">
-                <div className="w-12 h-12 shrink-0 rounded-xl bg-primary-50 flex items-center justify-center">
+              <div key={item.title} className="th-bg-card rounded-2xl p-6 border th-border flex gap-4">
+                <div className="w-12 h-12 shrink-0 rounded-xl th-bg-primary-soft flex items-center justify-center">
                   <Icon className="w-6 h-6 text-primary-500" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-surface-900">{item.title}</h4>
-                  <p className="mt-1 text-sm text-surface-800/60 leading-relaxed">{item.description}</p>
+                  <h4 className="font-bold th-heading">{item.title}</h4>
+                  <p className="mt-1 text-sm th-muted leading-relaxed">{item.description}</p>
                 </div>
               </div>
             );
@@ -121,7 +121,7 @@ function SuccessStoriesSection() {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding th-bg-page">
       <div className="container-max">
         <SectionHeading title="Success Stories" />
         <div
@@ -131,7 +131,7 @@ function SuccessStoriesSection() {
           }`}
         >
           {SUCCESS_STORIES.map((story, i) => (
-            <div key={story.title} className="rounded-2xl overflow-hidden border border-surface-100 card-hover">
+            <div key={story.title} className="rounded-2xl overflow-hidden border th-border card-hover">
               <div className="h-44 relative overflow-hidden">
                 <img
                   src={storyImages[i]}
@@ -144,20 +144,20 @@ function SuccessStoriesSection() {
                   {story.industry}
                 </span>
               </div>
-              <div className="p-5">
-                <h4 className="font-bold text-surface-900">{story.title}</h4>
-                <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">{story.description}</p>
+              <div className="p-5 th-bg-card">
+                <h4 className="font-bold th-heading">{story.title}</h4>
+                <p className="mt-2 text-sm th-muted leading-relaxed">{story.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <div className="bg-surface-50 rounded-2xl p-8 border border-surface-100 max-w-lg mx-auto">
-            <h3 className="text-xl font-bold text-surface-900">
+          <div className="th-bg-inset rounded-2xl p-8 border th-border max-w-lg mx-auto">
+            <h3 className="text-xl font-bold th-heading">
               Let&apos;s Discuss Your Industry Requirements
             </h3>
-            <p className="text-sm text-surface-800/60 mt-2">
+            <p className="text-sm th-muted mt-2">
               Get industry-specific solutions tailored to your needs
             </p>
             <div className="mt-6">

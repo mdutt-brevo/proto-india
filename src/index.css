@@ -11,6 +11,8 @@
   }
   body {
     @apply font-body text-surface-800 bg-white;
+    @apply dark:text-white/90 dark:bg-surface-900;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold;
@@ -18,6 +20,56 @@
 }
 
 @layer components {
+  /* ============================================================
+     SEMANTIC THEME UTILITIES — Single-source dark mode tokens
+     Prefix: th- (theme-aware hue)
+     ============================================================
+     These classes bundle light + dark styles so page authors never
+     need to remember the `dark:` counterpart. Change them HERE and
+     every consumer updates automatically.
+     ============================================================ */
+
+  /* ── Text Hierarchy ──────────────────────────────────────────── */
+  .th-heading        { @apply text-surface-900  dark:text-white; }
+  .th-body           { @apply text-surface-800  dark:text-white; }
+  .th-body-secondary { @apply text-surface-800/70 dark:text-white/70; }
+  .th-muted          { @apply text-surface-800/60 dark:text-white/60; }
+  .th-subtle         { @apply text-surface-800/50 dark:text-white/50; }
+  .th-faint          { @apply text-surface-800/40 dark:text-white/40; }
+  .th-ghost          { @apply text-surface-800/30 dark:text-white/30; }
+
+  /* ── Surfaces ────────────────────────────────────────────────── */
+  .th-bg-page        { @apply bg-white        dark:bg-surface-900; }
+  .th-bg-alt         { @apply bg-surface-50   dark:bg-surface-900/80; }
+  .th-bg-card        { @apply bg-white        dark:bg-surface-800; }
+  .th-bg-inset       { @apply bg-surface-50   dark:bg-surface-800/50; }
+  .th-bg-primary-soft { @apply bg-primary-50  dark:bg-primary-900/30; }
+
+  /* ── Borders ─────────────────────────────────────────────────── */
+  .th-border         { @apply border-surface-100    dark:border-white/10; }
+  .th-border-input   { @apply border-surface-200    dark:border-white/15; }
+  .th-border-subtle  { @apply border-surface-200/60 dark:border-white/[0.08]; }
+  .th-border-section { @apply border-surface-200/60 dark:border-white/10; }
+
+  /* ── Form Controls ───────────────────────────────────────────── */
+  .th-input {
+    @apply w-full px-4 py-3 rounded-lg text-sm transition-all
+           border-surface-200    dark:border-white/15
+           bg-white              dark:bg-surface-800
+           text-surface-800      dark:text-white
+           placeholder:text-surface-800/30 dark:placeholder:text-white/30
+           focus:outline-none focus:ring-2 focus:ring-primary-500/20
+           focus:border-primary-500;
+  }
+  .th-select {
+    @apply w-full px-4 py-3 rounded-lg text-sm transition-all appearance-none
+           border-surface-200    dark:border-white/15
+           bg-white              dark:bg-surface-800
+           text-surface-800      dark:text-white
+           focus:outline-none focus:ring-2 focus:ring-primary-500/20
+           focus:border-primary-500;
+  }
+
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 bg-primary-500 text-white font-heading font-semibold
            px-6 py-3 rounded-lg hover:bg-primary-600 transition-all duration-200
@@ -30,7 +82,9 @@
   }
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 border-2 border-primary-500 text-primary-500
+           dark:border-primary-400 dark:text-primary-400
            font-heading font-semibold px-6 py-3 rounded-lg hover:bg-primary-500 hover:text-white
+           dark:hover:bg-primary-400 dark:hover:text-surface-900
            transition-all duration-200 active:scale-[0.98];
   }
   .btn-white {
@@ -52,6 +106,12 @@
       radial-gradient(ellipse at 20% 50%, rgba(0,102,204,0.08) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 20%, rgba(255,107,0,0.06) 0%, transparent 50%),
       radial-gradient(ellipse at 50% 80%, rgba(0,102,204,0.04) 0%, transparent 50%);
+  }
+  :is(.dark) .gradient-mesh {
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(96,165,250,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(96,165,250,0.03) 0%, transparent 50%);
   }
 
   /* ============================================================
@@ -94,6 +154,20 @@
     -webkit-text-fill-color: transparent;
     animation: shimmer 2.5s ease-in-out infinite;
   }
+  :is(.dark) .metallic-sheen {
+    background: linear-gradient(
+      110deg,
+      #94a3b8 0%,
+      #cbd5e1 25%,
+      #f1f5f9 50%,
+      #cbd5e1 75%,
+      #94a3b8 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   /* Metallic Card Surface — subtle brushed metal feel */
   .metallic-surface {
@@ -104,6 +178,16 @@
       #f1f5f9 50%,
       #e2e8f0 70%,
       #f8fafc 100%
+    );
+  }
+  :is(.dark) .metallic-surface {
+    background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.03) 0%,
+      rgba(255,255,255,0.06) 30%,
+      rgba(255,255,255,0.04) 50%,
+      rgba(255,255,255,0.06) 70%,
+      rgba(255,255,255,0.03) 100%
     );
   }
 
@@ -151,6 +235,10 @@
     position: absolute;
     background: rgba(26, 86, 219, 0.3);
   }
+  :is(.dark) .dimension-line::before,
+  :is(.dark) .dimension-line::after {
+    background: rgba(96, 165, 250, 0.3);
+  }
   .dimension-line::before {
     top: 0;
     bottom: 0;
@@ -183,6 +271,10 @@
     content: "";
     position: absolute;
     background: rgba(26, 86, 219, 0.15);
+  }
+  :is(.dark) .crosshair::before,
+  :is(.dark) .crosshair::after {
+    background: rgba(96, 165, 250, 0.15);
   }
   .crosshair::before {
     width: 20px;
@@ -245,6 +337,6 @@
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { @apply bg-surface-100; }
-::-webkit-scrollbar-thumb { @apply bg-surface-200 rounded-full; }
+::-webkit-scrollbar-track { @apply bg-surface-100 dark:bg-surface-900; }
+::-webkit-scrollbar-thumb { @apply bg-surface-200 dark:bg-white/10 rounded-full; }
 ::-webkit-scrollbar-thumb:hover { @apply bg-primary-500/40; }

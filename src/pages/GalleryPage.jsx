@@ -14,13 +14,13 @@ const FILTER_MAP = {
 
 function PageHero() {
   return (
-    <section className="relative overflow-hidden gradient-mesh">
+    <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
         <p className="text-sm font-semibold text-primary-500 mb-3">Gallery</p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-surface-900 leading-tight animate-slide-up">
+        <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Our Work Gallery
         </h1>
-        <p className="mt-4 text-lg text-surface-800/60 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+        <p className="mt-4 text-lg th-muted max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
           Showcasing Precision, Quality &amp; Craftsmanship
         </p>
       </div>
@@ -37,7 +37,7 @@ function GalleryGrid() {
     : GALLERY_ITEMS;
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding th-bg-page">
       <div className="container-max">
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
@@ -48,7 +48,7 @@ function GalleryGrid() {
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                 active === f
                   ? "bg-primary-500 text-white shadow-md shadow-primary-500/20"
-                  : "bg-surface-50 text-surface-800/60 hover:bg-surface-100 border border-surface-200/60"
+                  : "th-bg-inset th-muted hover:bg-surface-100 dark:hover:bg-white/10 border th-border-subtle"
               }`}
             >
               {f}
@@ -97,7 +97,7 @@ function FeaturedProjects() {
   const [ref, isInView] = useInView();
 
   return (
-    <section className="section-padding bg-surface-50">
+    <section className="section-padding th-bg-alt">
       <div className="container-max">
         <SectionHeading title="Featured Projects" />
         <div
@@ -109,7 +109,7 @@ function FeaturedProjects() {
           {FEATURED_PROJECTS.map((project) => (
             <div
               key={project.title}
-              className="bg-white rounded-2xl overflow-hidden border border-surface-100 card-hover"
+              className="th-bg-card rounded-2xl overflow-hidden border th-border card-hover"
             >
               {/* Project image */}
               <div className="h-48 overflow-hidden relative">
@@ -126,16 +126,16 @@ function FeaturedProjects() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-lg font-bold text-surface-900">{project.title}</h3>
-                <p className="mt-2 text-sm text-surface-800/60 leading-relaxed">
+                <h3 className="text-lg font-bold th-heading">{project.title}</h3>
+                <p className="mt-2 text-sm th-muted leading-relaxed">
                   {project.description}
                 </p>
 
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   {Object.entries(project.specs).map(([key, val]) => (
                     <div key={key} className="text-xs">
-                      <span className="font-bold text-surface-800/50">{key}:</span>{" "}
-                      <span className="text-surface-800/70">{val}</span>
+                      <span className="font-bold th-subtle">{key}:</span>{" "}
+                      <span className="th-body-secondary">{val}</span>
                     </div>
                   ))}
                 </div>
@@ -145,9 +145,9 @@ function FeaturedProjects() {
         </div>
 
         <div className="text-center mt-12">
-          <div className="bg-white rounded-2xl p-8 border border-surface-100 max-w-lg mx-auto">
-            <h3 className="text-xl font-bold text-surface-900">Want to See More?</h3>
-            <p className="text-sm text-surface-800/60 mt-2">
+          <div className="th-bg-card rounded-2xl p-8 border th-border max-w-lg mx-auto">
+            <h3 className="text-xl font-bold th-heading">Want to See More?</h3>
+            <p className="text-sm th-muted mt-2">
               Contact us to discuss your project and see more examples
             </p>
             <div className="mt-6">
