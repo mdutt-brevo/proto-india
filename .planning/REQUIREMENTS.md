@@ -44,15 +44,15 @@
 
 ### Performance
 
-- [ ] **PRF-01**: 60fps maintained on mid-range devices (< 16ms per frame)
+- [x] **PRF-01**: 60fps maintained on mid-range devices (< 16ms per frame)
 - [x] **PRF-02**: All animations use transform/opacity only — no width/height/top/left
-- [ ] **PRF-03**: Particle count adapts to device capability (navigator.hardwareConcurrency heuristic)
+- [x] **PRF-03**: Particle count adapts to device capability (navigator.hardwareConcurrency heuristic)
 - [x] **PRF-04**: No layout thrashing — zero CLS from animation elements
 
 ### Responsive & Accessibility
 
 - [x] **RES-01**: SVG viewBox scales across all screen sizes (mobile 375px → desktop 1440px+)
-- [ ] **RES-02**: Hero text content remains readable over animation at all breakpoints
+- [x] **RES-02**: Hero text content remains readable over animation at all breakpoints
 - [x] **RES-03**: prefers-reduced-motion shows InjectionMoldingStatic fallback
 - [x] **RES-04**: Animation does not block user interaction (no blocking animation)
 - [x] **RES-05**: Keyboard navigation and screen reader experience unaffected by animation
@@ -115,12 +115,12 @@
 | HER-07 | Phase 4 | Complete |
 | HER-08 | Phase 4 | Complete |
 | HER-09 | Phase 4 | Complete |
-| PRF-01 | Phase 4 | Pending |
+| PRF-01 | Phase 4 | Complete |
 | PRF-02 | Phase 4 | Complete |
-| PRF-03 | Phase 4 | Pending |
+| PRF-03 | Phase 4 | Complete |
 | PRF-04 | Phase 4 | Complete |
 | RES-01 | Phase 4 | Complete |
-| RES-02 | Phase 4 | Pending |
+| RES-02 | Phase 4 | Complete |
 | RES-03 | Phase 4 | Complete |
 | RES-04 | Phase 4 | Complete |
 | RES-05 | Phase 4 | Complete |
