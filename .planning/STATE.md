@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: "Completed 01-foundation 01-01-PLAN.md"
-last_updated: "2026-04-01T17:15:00.000Z"
+stopped_at: Completed 01-foundation 01-03-PLAN.md
+last_updated: "2026-04-01T16:52:31.936Z"
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -47,6 +47,7 @@ Plan: 2 of 3
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation P03 | 74s | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -62,6 +63,9 @@ Recent decisions affecting current work:
 - [01-01]: GearLoader SVG used as direct (non-lazy) import — pure CSS/SVG, no async deps, lazy wrapper not needed
 - [01-01]: DarkModeProvider removed from App() root — BrowserRouter is now outermost; useDarkMode hook still works in leaf components
 - [01-01]: lazy import kept in App.jsx — still required for page-level code splitting
+- [Phase 01-03]: LazyMotion wraps BrowserRouter as outermost JSX — all m.* components use 4.6KB lazy bundle instead of 34KB full motion import
+- [Phase 01-03]: motionTokens.js in src/lib/ as a pure constants module — no React imports, importable by hooks and components without circular dep risk
+- [Phase 01-03]: COLOR constants duplicated from tailwind.config.js — Motion animate() bypasses Tailwind JIT, hex values must be explicit
 
 ### Pending Todos
 
@@ -75,6 +79,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01
-Stopped at: Completed 01-foundation 01-01-PLAN.md
+Last session: 2026-04-01T16:52:31.934Z
+Stopped at: Completed 01-foundation 01-03-PLAN.md
 Resume file: None
