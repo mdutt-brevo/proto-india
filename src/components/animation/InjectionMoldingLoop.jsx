@@ -6,6 +6,9 @@ import { AnimatePresence } from "motion/react";
 import { useMoldingLoop } from "../../hooks/useMoldingLoop";
 import SceneWrapper from "./SceneWrapper";
 import InjectionMoldingStatic from "./InjectionMoldingStatic";
+import GranulesScene  from "./scenes/GranulesScene";
+import MeltingScene   from "./scenes/MeltingScene";
+import InjectionScene from "./scenes/InjectionScene";
 
 // Accessibility: descriptive labels per scene for aria-live region.
 // Matches the 7-scene narrative in REQUIREMENTS.md HER-01..HER-07.
@@ -70,7 +73,10 @@ export default function InjectionMoldingLoop() {
           the next key. Placing key on AnimatePresence itself silently breaks exit. */}
       <AnimatePresence mode="wait">
         <SceneWrapper key={sceneIndex}>
-          <SceneStub index={sceneIndex} />
+          {sceneIndex === 0 && <GranulesScene />}
+          {sceneIndex === 1 && <MeltingScene />}
+          {sceneIndex === 2 && <InjectionScene />}
+          {sceneIndex >= 3  && <SceneStub index={sceneIndex} />}
         </SceneWrapper>
       </AnimatePresence>
     </div>
