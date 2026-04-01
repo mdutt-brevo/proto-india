@@ -6,16 +6,16 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#1a56db",
-          600: "#1648c0",
-          700: "#1239a3",
-          800: "#0e2d87",
-          900: "#0a1f5c",
+          50:  "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a",
         },
         accent: {
           400: "#f97316",
@@ -41,9 +41,9 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
-        body: ['"DM Sans"', "system-ui", "sans-serif"],
-        mono: ['"JetBrains Mono"', "monospace"],
+        heading: ["Inter", "system-ui", "sans-serif"],
+        body:    ["Inter", "system-ui", "sans-serif"],
+        mono:    ['"JetBrains Mono"', "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
