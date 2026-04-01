@@ -1,17 +1,27 @@
 import {
   Smartphone, Car, Zap, Refrigerator, Package, Heart,
 } from "lucide-react";
+import { m } from "motion/react";
 import { INDUSTRIES } from "../../data/siteData";
-import { useInView } from "../../hooks/useInView";
+import { EASE_SPRING_DEFAULT } from "../../lib/motionTokens";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import ToolpathDivider from "../ui/ToolpathDivider";
 
 const ICON_MAP = { Smartphone, Car, Zap, Refrigerator, Package, Heart };
 
-export default function IndustriesSection() {
-  const [ref, isInView] = useInView();
+// stamp-in equivalent: drop from above with spring overshoot
+const cardVariants = {
+  hidden: { opacity: 0, y: -16, scale: 1.1 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { ...EASE_SPRING_DEFAULT, delay: i * 0.08 },
+  }),
+};
 
+export default function IndustriesSection() {
   return (
     <section className="section-padding bg-surface-50 dark:bg-surface-900/80 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-20" />
@@ -22,16 +32,19 @@ export default function IndustriesSection() {
           subtitle="Trusted by leading companies across diverse sectors"
         />
 
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
           {INDUSTRIES.map((ind, i) => {
             const Icon = ICON_MAP[ind.icon];
             return (
-              <div
+              <m.div
                 key={ind.id}
-                className={`group bg-white dark:bg-white/[0.04] dark:backdrop-blur-sm rounded-2xl overflow-hidden
-                  border border-surface-100 dark:border-white/10 card-hover relative
-                  ${isInView ? "animate-stamp-in" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.08}s` }}
+                variants={cardVariants}
+                custom={i}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                className="group bg-white dark:bg-white/[0.04] dark:backdrop-blur-sm rounded-2xl overflow-hidden
+                  border border-surface-100 dark:border-white/10 card-hover relative"
               >
                 <div className="relative h-28 overflow-hidden">
                   <img
@@ -54,7 +67,7 @@ export default function IndustriesSection() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              </m.div>
             );
           })}
         </div>
