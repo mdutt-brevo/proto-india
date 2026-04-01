@@ -36,7 +36,12 @@ committed, design tokens are applied, and Motion is available as an app-wide pro
   3. The GearLoader spinner appears using CSS/SVG only (no Three.js canvas)
   4. The page renders in dark mode only — no theme toggle visible, no light mode flash
   5. Tailwind config resolves Inter and JetBrains Mono fonts and the #64748B / #EA580C palette tokens
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Three.js removal (GearLoader3D swap, HeroScene/SectionScene cleanup, npm uninstall)
+- [ ] 01-02-PLAN.md — Dark-only theme + design system (static dark class, Inter fonts, slate primary, simplified CSS tokens)
+- [ ] 01-03-PLAN.md — Motion infrastructure (LazyMotion provider, motionTokens.js constants)
 
 ### Phase 2: Animation Infrastructure
 **Goal**: The scene state machine, timing constants, AnimatePresence envelope, and
@@ -97,7 +102,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/? | Not started | - |
+| 1. Foundation | 0/3 | Planned | - |
 | 2. Animation Infrastructure | 0/? | Not started | - |
 | 3. Scenes 1-3 | 0/? | Not started | - |
 | 4. Scenes 4-7 and Polish | 0/? | Not started | - |
