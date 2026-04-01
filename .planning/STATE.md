@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-foundation 01-02-PLAN.md
-last_updated: "2026-04-01T16:59:35.548Z"
+stopped_at: Completed 02-animation-infrastructure 02-02-PLAN.md
+last_updated: "2026-04-01T17:11:14.363Z"
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 6
+  completed_plans: 5
 ---
 
 # Project State
@@ -20,12 +20,12 @@ See: .planning/PROJECT.md (updated 2026-04-01)
 
 **Core value:** Hero animation communicates injection molding expertise — granule to finished
 component — in a smooth, performant loop that runs on any screen without lag.
-**Current focus:** Phase 01 — Foundation
+**Current focus:** Phase 02 — Animation Infrastructure
 
 ## Current Position
 
-Phase: 01 (Foundation) — EXECUTING
-Plan: 2 of 3
+Phase: 02 (Animation Infrastructure) — EXECUTING
+Plan: 1 of 3
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Plan: 2 of 3
 *Updated after each plan completion*
 | Phase 01-foundation P03 | 74s | 2 tasks | 2 files |
 | Phase 01-foundation P01-02 | 20 | 2 tasks | 4 files |
+| Phase 02-animation-infrastructure P02 | 2 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 01-02]: Static dark class on html element eliminates FOUC and removes need for JS-driven theme toggle
 - [Phase 01-02]: primary ramp switched from blue (#1a56db) to slate (#64748b) for industrial construction aesthetic
 - [Phase 01-02]: All :is(.dark) wrappers removed from index.css — permanently active with static dark class, redundant
+- [Phase 02-animation-infrastructure]: InjectionMoldingStatic: outer div carries role=img; svg is aria-hidden to prevent screen-reader double-announcement
+- [Phase 02-animation-infrastructure]: No useReducedMotion() in static component — orchestrator (Plan 03) makes branch decision; component stays unconditionally dependency-free
 
 ### Pending Todos
 
@@ -83,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T16:55:23.553Z
-Stopped at: Completed 01-foundation 01-02-PLAN.md
+Last session: 2026-04-01T17:11:14.361Z
+Stopped at: Completed 02-animation-infrastructure 02-02-PLAN.md
 Resume file: None

@@ -26,8 +26,8 @@
 - [x] **INF-02**: Motion animation tokens file (motionTokens.js) with shared durations, easings, spring configs
 - [ ] **INF-03**: useMoldingLoop custom hook — scene index state machine with SCENE_DURATIONS array
 - [ ] **INF-04**: SceneWrapper component with AnimatePresence mode="wait" orchestration
-- [ ] **INF-05**: InjectionMoldingStatic component — reduced-motion fallback (static final-frame SVG)
-- [ ] **INF-06**: useReducedMotion integration — OS-level motion preference respected
+- [x] **INF-05**: InjectionMoldingStatic component — reduced-motion fallback (static final-frame SVG)
+- [x] **INF-06**: useReducedMotion integration — OS-level motion preference respected
 
 ### Hero Animation Scenes
 
@@ -103,8 +103,8 @@
 | INF-02 | Phase 1 | Complete |
 | INF-03 | Phase 2 | Pending |
 | INF-04 | Phase 2 | Pending |
-| INF-05 | Phase 2 | Pending |
-| INF-06 | Phase 2 | Pending |
+| INF-05 | Phase 2 | Complete |
+| INF-06 | Phase 2 | Complete |
 | HER-01 | Phase 3 | Pending |
 | HER-02 | Phase 3 | Pending |
 | HER-03 | Phase 3 | Pending |
