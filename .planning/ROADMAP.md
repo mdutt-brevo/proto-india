@@ -17,7 +17,7 @@ last — the loop is verified in isolation first, then wired to the live page.
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Replace Three.js with SVG loader, apply design system, establish Motion provider
+- [x] **Phase 1: Foundation** - Replace Three.js with SVG loader, apply design system, establish Motion provider (completed 2026-04-01)
 - [ ] **Phase 2: Animation Infrastructure** - State machine, timing tokens, SceneWrapper, reduced-motion fallback
 - [ ] **Phase 3: Scenes 1-3** - Granules, Melting, Injection scenes — hardest animation patterns first
 - [ ] **Phase 4: Scenes 4-7 and Polish** - Fill, Cooling, Ejection, Product Reveal + performance and responsive validation
@@ -102,7 +102,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/3 | In Progress|  |
+| 1. Foundation | 3/3 | Complete   | 2026-04-01 |
 | 2. Animation Infrastructure | 0/? | Not started | - |
 | 3. Scenes 1-3 | 0/? | Not started | - |
 | 4. Scenes 4-7 and Polish | 0/? | Not started | - |

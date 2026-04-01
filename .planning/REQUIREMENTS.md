@@ -15,10 +15,10 @@
 
 ### Theme & Design System
 
-- [ ] **THM-01**: Dark-only theme enforced (remove theme toggle and light mode code)
-- [ ] **THM-02**: Construction/Architecture color palette applied (#64748B primary, #EA580C safety orange accent, dark backgrounds)
-- [ ] **THM-03**: Inter + JetBrains Mono typography system configured in Tailwind
-- [ ] **THM-04**: Industrial CSS design tokens (metallic sheens, glow effects) updated for new palette
+- [x] **THM-01**: Dark-only theme enforced (remove theme toggle and light mode code)
+- [x] **THM-02**: Construction/Architecture color palette applied (#64748B primary, #EA580C safety orange accent, dark backgrounds)
+- [x] **THM-03**: Inter + JetBrains Mono typography system configured in Tailwind
+- [x] **THM-04**: Industrial CSS design tokens (metallic sheens, glow effects) updated for new palette
 
 ### Animation Infrastructure
 
@@ -95,10 +95,10 @@
 | DEP-03 | Phase 1 | Complete |
 | DEP-04 | Phase 1 | Complete |
 | DEP-05 | Phase 1 | Complete |
-| THM-01 | Phase 1 | Pending |
-| THM-02 | Phase 1 | Pending |
-| THM-03 | Phase 1 | Pending |
-| THM-04 | Phase 1 | Pending |
+| THM-01 | Phase 1 | Complete |
+| THM-02 | Phase 1 | Complete |
+| THM-03 | Phase 1 | Complete |
+| THM-04 | Phase 1 | Complete |
 | INF-01 | Phase 1 | Complete |
 | INF-02 | Phase 1 | Complete |
 | INF-03 | Phase 2 | Pending |

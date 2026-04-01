@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-foundation 01-03-PLAN.md
-last_updated: "2026-04-01T16:52:31.936Z"
+stopped_at: Completed 01-foundation 01-02-PLAN.md
+last_updated: "2026-04-01T16:55:23.556Z"
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
+  completed_plans: 3
 ---
 
 # Project State
@@ -48,6 +48,7 @@ Plan: 2 of 3
 
 *Updated after each plan completion*
 | Phase 01-foundation P03 | 74s | 2 tasks | 2 files |
+| Phase 01-foundation P01-02 | 20 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,9 @@ Recent decisions affecting current work:
 - [Phase 01-03]: LazyMotion wraps BrowserRouter as outermost JSX — all m.* components use 4.6KB lazy bundle instead of 34KB full motion import
 - [Phase 01-03]: motionTokens.js in src/lib/ as a pure constants module — no React imports, importable by hooks and components without circular dep risk
 - [Phase 01-03]: COLOR constants duplicated from tailwind.config.js — Motion animate() bypasses Tailwind JIT, hex values must be explicit
+- [Phase 01-02]: Static dark class on html element eliminates FOUC and removes need for JS-driven theme toggle
+- [Phase 01-02]: primary ramp switched from blue (#1a56db) to slate (#64748b) for industrial construction aesthetic
+- [Phase 01-02]: All :is(.dark) wrappers removed from index.css — permanently active with static dark class, redundant
 
 ### Pending Todos
 
@@ -79,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T16:52:31.934Z
-Stopped at: Completed 01-foundation 01-03-PLAN.md
+Last session: 2026-04-01T16:55:23.553Z
+Stopped at: Completed 01-foundation 01-02-PLAN.md
 Resume file: None
