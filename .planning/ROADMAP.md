@@ -54,7 +54,12 @@ is written.
   2. A user with prefers-reduced-motion enabled sees InjectionMoldingStatic (static SVG) instead of any animation
   3. SceneWrapper renders placeholder divs with a visible fade-in/fade-out when sceneIndex changes
   4. `motionTokens.js` exports SCENE_DURATIONS that sum to 10-14 seconds
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — useMoldingLoop hook (scene index state machine, SCENE_DURATIONS-driven, reduced-motion freeze)
+- [ ] 02-02-PLAN.md — InjectionMoldingStatic (static SVG fallback, COLOR constants, zero motion imports)
+- [ ] 02-03-PLAN.md — SceneWrapper + InjectionMoldingLoop orchestrator shell (AnimatePresence wiring, 7 stub scenes)
 
 ### Phase 3: Scenes 1-3
 **Goal**: The first three injection molding scenes (Granules, Melting, Injection) are
@@ -103,7 +108,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-04-01 |
-| 2. Animation Infrastructure | 0/? | Not started | - |
+| 2. Animation Infrastructure | 0/3 | Not started | - |
 | 3. Scenes 1-3 | 0/? | Not started | - |
 | 4. Scenes 4-7 and Polish | 0/? | Not started | - |
 | 5. Integration | 0/? | Not started | - |
