@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
+import { LazyMotion, domAnimation } from "motion/react";
 import GearLoader from "./components/ui/GearLoader";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -57,8 +58,10 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AppLayout />
-    </BrowserRouter>
+    <LazyMotion features={domAnimation}>
+      <BrowserRouter>
+        <AppLayout />
+      </BrowserRouter>
+    </LazyMotion>
   );
 }
