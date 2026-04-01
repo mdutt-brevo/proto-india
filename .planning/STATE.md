@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-animation-infrastructure 02-01-PLAN.md
-last_updated: "2026-04-01T17:10:33Z"
+stopped_at: Completed 02-animation-infrastructure 02-03-PLAN.md
+last_updated: "2026-04-01T17:17:03.567Z"
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 6
 ---
 
 # Project State
@@ -50,6 +50,7 @@ Plan: 2 of 3 (02-01 complete)
 | Phase 01-foundation P03 | 74s | 2 tasks | 2 files |
 | Phase 01-foundation P01-02 | 20 | 2 tasks | 4 files |
 | Phase 02-animation-infrastructure P01 | 2min | 1 task | 1 file |
+| Phase 02-animation-infrastructure P03 | 5min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,9 @@ Recent decisions affecting current work:
 - [Phase 02-animation-infrastructure]: No useReducedMotion() in static component — orchestrator (Plan 03) makes branch decision; component stays unconditionally dependency-free
 - [02-01]: useMoldingLoop SCENE_COUNT derived from SCENE_DURATIONS.length — prevents drift when motionTokens.js changes
 - [02-01]: useReducedMotion null treated as false — animate until OS explicitly signals stop
+- [Phase 02-03]: key={sceneIndex} on SceneWrapper child, NOT AnimatePresence — placing it on AnimatePresence silently breaks exit animations
+- [Phase 02-03]: SceneStub intentionally inline — Phase 3 replaces by index with real scene imports; separate stub files would only be deleted
+- [Phase 02-03]: eslint-disable on m import — no-unused-vars rule cannot detect JSX member-expression usage (m.div); narrow per-line disable is documented last resort
 
 ### Pending Todos
 
@@ -88,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T17:10:33Z
-Stopped at: Completed 02-animation-infrastructure 02-01-PLAN.md
+Last session: 2026-04-01T17:17:03.564Z
+Stopped at: Completed 02-animation-infrastructure 02-03-PLAN.md
 Resume file: None
