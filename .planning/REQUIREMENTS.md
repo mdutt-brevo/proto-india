@@ -45,17 +45,17 @@
 ### Performance
 
 - [ ] **PRF-01**: 60fps maintained on mid-range devices (< 16ms per frame)
-- [ ] **PRF-02**: All animations use transform/opacity only — no width/height/top/left
+- [x] **PRF-02**: All animations use transform/opacity only — no width/height/top/left
 - [ ] **PRF-03**: Particle count adapts to device capability (navigator.hardwareConcurrency heuristic)
-- [ ] **PRF-04**: No layout thrashing — zero CLS from animation elements
+- [x] **PRF-04**: No layout thrashing — zero CLS from animation elements
 
 ### Responsive & Accessibility
 
-- [ ] **RES-01**: SVG viewBox scales across all screen sizes (mobile 375px → desktop 1440px+)
+- [x] **RES-01**: SVG viewBox scales across all screen sizes (mobile 375px → desktop 1440px+)
 - [ ] **RES-02**: Hero text content remains readable over animation at all breakpoints
-- [ ] **RES-03**: prefers-reduced-motion shows InjectionMoldingStatic fallback
-- [ ] **RES-04**: Animation does not block user interaction (no blocking animation)
-- [ ] **RES-05**: Keyboard navigation and screen reader experience unaffected by animation
+- [x] **RES-03**: prefers-reduced-motion shows InjectionMoldingStatic fallback
+- [x] **RES-04**: Animation does not block user interaction (no blocking animation)
+- [x] **RES-05**: Keyboard navigation and screen reader experience unaffected by animation
 
 ### Integration
 
@@ -116,14 +116,14 @@
 | HER-08 | Phase 4 | Complete |
 | HER-09 | Phase 4 | Complete |
 | PRF-01 | Phase 4 | Pending |
-| PRF-02 | Phase 4 | Pending |
+| PRF-02 | Phase 4 | Complete |
 | PRF-03 | Phase 4 | Pending |
-| PRF-04 | Phase 4 | Pending |
-| RES-01 | Phase 4 | Pending |
+| PRF-04 | Phase 4 | Complete |
+| RES-01 | Phase 4 | Complete |
 | RES-02 | Phase 4 | Pending |
-| RES-03 | Phase 4 | Pending |
-| RES-04 | Phase 4 | Pending |
-| RES-05 | Phase 4 | Pending |
+| RES-03 | Phase 4 | Complete |
+| RES-04 | Phase 4 | Complete |
+| RES-05 | Phase 4 | Complete |
 | INT-01 | Phase 5 | Pending |
 | INT-02 | Phase 5 | Pending |
 | INT-03 | Phase 5 | Pending |

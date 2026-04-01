@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 04-scenes-4-7-and-polish 04-01-PLAN.md
-last_updated: "2026-04-01T17:56:12.497Z"
+stopped_at: Completed 04-scenes-4-7-and-polish 04-03-PLAN.md
+last_updated: "2026-04-01T17:59:33.220Z"
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 14
-  completed_plans: 12
+  completed_plans: 13
 ---
 
 # Project State
@@ -56,6 +56,7 @@ Plan: 2 of 4
 | Phase 03-scenes-1-3 P04 | 5min | 1 tasks | 1 files |
 | Phase 04-scenes-4-7 P02 | 4min | 2 tasks | 2 files |
 | Phase 04-scenes-4-7-and-polish P01 | 4min | 2 tasks | 2 files |
+| Phase 04-scenes-4-7-and-polish P03 | 2min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -96,6 +97,7 @@ Recent decisions affecting current work:
 - [04-02]: Loop seam handled entirely by SceneWrapper AnimatePresence exit — ProductRevealScene needs no exit variant; comment documents this explicitly in the file
 - [Phase 04-01]: FillingScene uses clipPath rect y/height animation — orange fill rect is static and always full-size; only the visible clip window grows
 - [Phase 04-01]: CoolingScene fill keyframe uses times:[0, 0.3, 1] so color holds orange for first 30% of 1.2s, then cools to surfacePrimary; mould separation fires at delay=0.9 after color shift is 60% complete
+- [Phase 04-scenes-4-7-and-polish]: SceneStub and STUB_COLORS removed entirely — once all 7 indices map to real components, the stub scaffolding has no purpose and adds dead code
 
 ### Pending Todos
 
@@ -109,6 +111,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T17:56:12.494Z
-Stopped at: Completed 04-scenes-4-7-and-polish 04-01-PLAN.md
+Last session: 2026-04-01T17:59:33.217Z
+Stopped at: Completed 04-scenes-4-7-and-polish 04-03-PLAN.md
 Resume file: None
