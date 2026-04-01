@@ -110,7 +110,12 @@ import paths are permanently removed — the site ships with the new animation s
   2. Section scroll animations (Services, Industries, WhyChooseUs) use Motion whileInView — no SectionScene canvas
   3. App.jsx shows the CSS/SVG GearLoader during page load, not a Three.js canvas
   4. Existing staggered text and CTA reveal animations still play correctly on the hero section
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Hero.jsx: wire InjectionMoldingLoop into right column, upgrade text/CTA/stats to Motion variants
+- [ ] 05-02-PLAN.md — Section scroll animations: convert ServicesSection, IndustriesSection, WhyChooseUs to Motion whileInView
+- [ ] 05-03-PLAN.md — Human verify full integration in browser (all 4 INT requirements)
 
 ## Progress
 
@@ -123,4 +128,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Animation Infrastructure | 3/3 | Complete   | 2026-04-01 |
 | 3. Scenes 1-3 | 0/4 | Not started | - |
 | 4. Scenes 4-7 and Polish | 4/4 | Complete   | 2026-04-01 |
-| 5. Integration | 0/? | Not started | - |
+| 5. Integration | 0/3 | Not started | - |
