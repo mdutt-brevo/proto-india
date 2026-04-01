@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-stopped_at: Completed 03-scenes-1-3 03-03-PLAN.md
-last_updated: "2026-04-01T17:40:00Z"
+status: phase-complete
+stopped_at: Completed 03-scenes-1-3 03-04-PLAN.md
+last_updated: "2026-04-01T17:40:35.270Z"
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 10
-  completed_plans: 8
+  completed_plans: 10
 ---
 
 # Project State
@@ -24,8 +24,8 @@ component — in a smooth, performant loop that runs on any screen without lag.
 
 ## Current Position
 
-Phase: 03 (Scenes 1-3) — EXECUTING
-Plan: 4 of 4
+Phase: 03 (Scenes 1-3) — COMPLETE
+Plan: 4 of 4 (all done)
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Plan: 4 of 4
 | Phase 02-animation-infrastructure P03 | 5min | 2 tasks | 2 files |
 | Phase 03-scenes-1-3 P02 | 3min | 1 tasks | 1 files |
 | Phase 03-scenes-1-3 P03 | 4min | 1 tasks | 1 files |
+| Phase 03-scenes-1-3 P04 | 5min | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -84,6 +85,10 @@ Recent decisions affecting current work:
 - [Phase 03-scenes-1-3]: SVG linearGradient cx/cy not animatable via Motion; x-translate on gradient-filled rect proxies the left-to-right heat sweep
 - [Phase 03-scenes-1-3]: Barrel glow uses Motion opacity keyframe array only — never mix CSS keyframe and Motion variants on same element
 - [Phase 03-scenes-1-3]: Per-granule delay requires inline variant objects — shared const variants cannot carry different per-item delay values
+- [03-03]: InjectionScene stroke={COLOR.accentOrange} is a static SVG attribute — SVG stroke color triggers main-thread repaints per frame when animated through Motion variants
+- [03-03]: pathLength is the only stroke-draw mechanism in this codebase — stroke-dasharray/stroke-dashoffset must never be used manually when Motion is present
+- [03-03]: initial/animate on root m.svg only; all children propagate via variants inheritance — established scene animation pattern
+- [Phase 03-scenes-1-3]: Conditional JSX over SCENES array for partial scene wiring — Phase 4 scenes absent, array would need nulls; explicit index conditionals are clearer
 
 ### Pending Todos
 
@@ -97,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T17:37:41.168Z
-Stopped at: Completed 03-scenes-1-3 03-02-PLAN.md
+Last session: 2026-04-01T17:40:35.267Z
+Stopped at: Completed 03-scenes-1-3 03-04-PLAN.md
 Resume file: None

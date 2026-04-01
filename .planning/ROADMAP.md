@@ -77,7 +77,7 @@ patterns that all subsequent scenes reuse.
 Plans:
 - [ ] 03-01-PLAN.md — GranulesScene (staggered m.rect particle fall, hopper SVG, 40/60 particle cap)
 - [ ] 03-02-PLAN.md — MeltingScene (barrel SVG, linear gradient heat sweep, granule scaleX compression)
-- [ ] 03-03-PLAN.md — InjectionScene (pathLength 0→1 nozzle stroke, thick orange line, mould cavity SVG)
+- [x] 03-03-PLAN.md — InjectionScene (pathLength 0→1 nozzle stroke, thick orange line, mould cavity SVG)
 - [ ] 03-04-PLAN.md — Wire scenes 1-3 into InjectionMoldingLoop (replace SceneStub indices 0-2, human verify)
 
 ### Phase 4: Scenes 4-7 and Polish

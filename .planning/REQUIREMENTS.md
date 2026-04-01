@@ -33,14 +33,14 @@
 
 - [ ] **HER-01**: Scene 1 — Raw Material: Granule particles falling into hopper (SVG + Motion particle system, max 40 particles on mobile)
 - [x] **HER-02**: Scene 2 — Melting: Granules moving through barrel with heat color transition (orange-red glow via CSS gradients)
-- [ ] **HER-03**: Scene 3 — Injection: Molten plastic pushed through nozzle into mould cavity (pathLength animation)
+- [x] **HER-03**: Scene 3 — Injection: Molten plastic pushed through nozzle into mould cavity (pathLength animation)
 - [ ] **HER-04**: Scene 4 — Mould Filling: Semi-cutaway mould cavity filling with flow (clipPath reveal animation)
 - [ ] **HER-05**: Scene 5 — Cooling: Glow reduction, mould halves separating smoothly (color + transform transition)
 - [ ] **HER-06**: Scene 6 — Ejection: Ejector pins push finished part out (transform + opacity sequence)
 - [ ] **HER-07**: Scene 7 — Product Reveal: Final product with brand line "Precision in Every Moulded Part" (scale + fade reveal)
 - [ ] **HER-08**: Seamless loop — Scene 7 exit transitions smoothly back to Scene 1 initial state
 - [ ] **HER-09**: Total loop duration 10–14 seconds with locked SCENE_DURATIONS constants
-- [ ] **HER-10**: All scene SVGs inline as JSX components (required for Motion pathLength animations)
+- [x] **HER-10**: All scene SVGs inline as JSX components (required for Motion pathLength animations)
 
 ### Performance
 
@@ -107,8 +107,8 @@
 | INF-06 | Phase 2 | Complete |
 | HER-01 | Phase 3 | Pending |
 | HER-02 | Phase 3 | Complete |
-| HER-03 | Phase 3 | Pending |
-| HER-10 | Phase 3 | Pending |
+| HER-03 | Phase 3 | Complete |
+| HER-10 | Phase 3 | Complete |
 | HER-04 | Phase 4 | Pending |
 | HER-05 | Phase 4 | Pending |
 | HER-06 | Phase 4 | Pending |
