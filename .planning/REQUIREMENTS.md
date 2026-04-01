@@ -59,10 +59,10 @@
 
 ### Integration
 
-- [ ] **INT-01**: Hero.jsx updated to use new Motion animation system instead of Three.js HeroScene
+- [x] **INT-01**: Hero.jsx updated to use new Motion animation system instead of Three.js HeroScene
 - [x] **INT-02**: Section scroll animations converted to Motion whileInView
-- [ ] **INT-03**: App.jsx loader replaced with CSS/SVG GearLoader (no Three.js)
-- [ ] **INT-04**: Existing staggered text/CTA reveal animations preserved or upgraded to Motion
+- [x] **INT-03**: App.jsx loader replaced with CSS/SVG GearLoader (no Three.js)
+- [x] **INT-04**: Existing staggered text/CTA reveal animations preserved or upgraded to Motion
 
 ## v2 Requirements
 
@@ -124,10 +124,10 @@
 | RES-03 | Phase 4 | Complete |
 | RES-04 | Phase 4 | Complete |
 | RES-05 | Phase 4 | Complete |
-| INT-01 | Phase 5 | Pending |
+| INT-01 | Phase 5 | Complete |
 | INT-02 | Phase 5 | Complete |
-| INT-03 | Phase 5 | Pending |
-| INT-04 | Phase 5 | Pending |
+| INT-03 | Phase 5 | Complete |
+| INT-04 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 38 total

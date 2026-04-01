@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Animation Infrastructure** - State machine, timing tokens, SceneWrapper, reduced-motion fallback (completed 2026-04-01)
 - [ ] **Phase 3: Scenes 1-3** - Granules, Melting, Injection scenes — hardest animation patterns first
 - [x] **Phase 4: Scenes 4-7 and Polish** - Fill, Cooling, Ejection, Product Reveal + performance and responsive validation (completed 2026-04-01)
-- [ ] **Phase 5: Integration** - Wire InjectionMoldingLoop into Hero.jsx, delete Three.js directory, final bundle check
+- [x] **Phase 5: Integration** - Wire InjectionMoldingLoop into Hero.jsx, delete Three.js directory, final bundle check (completed 2026-04-01)
 
 ## Phase Details
 
@@ -128,4 +128,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Animation Infrastructure | 3/3 | Complete   | 2026-04-01 |
 | 3. Scenes 1-3 | 0/4 | Not started | - |
 | 4. Scenes 4-7 and Polish | 4/4 | Complete   | 2026-04-01 |
-| 5. Integration | 2/3 | In Progress|  |
+| 5. Integration | 3/3 | Complete   | 2026-04-01 |
