@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, COMPANY } from "../../data/siteData";
 import Button from "../ui/Button";
-import DarkModeToggle from "../ui/DarkModeToggle";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -88,9 +87,8 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA + Dark Mode Toggle */}
+        {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <DarkModeToggle />
           <Button
             href="/quote"
             variant="accent"
@@ -101,9 +99,8 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile: Toggle + Dark Mode */}
+        {/* Mobile: Menu Toggle */}
         <div className="lg:hidden flex items-center gap-2">
-          <DarkModeToggle />
           <button
             className={`p-2 -mr-2 rounded-lg transition-colors ${
               isTransparent
