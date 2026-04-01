@@ -72,7 +72,13 @@ patterns that all subsequent scenes reuse.
   2. Scene 2 shows granules moving through a barrel with a visible orange-red heat color transition
   3. Scene 3 shows a pathLength stroke animation of molten plastic flowing through the nozzle into the mould
   4. All three scenes are inline JSX SVG components compatible with Motion pathLength animations
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — GranulesScene (staggered m.rect particle fall, hopper SVG, 40/60 particle cap)
+- [ ] 03-02-PLAN.md — MeltingScene (barrel SVG, linear gradient heat sweep, granule scaleX compression)
+- [ ] 03-03-PLAN.md — InjectionScene (pathLength 0→1 nozzle stroke, thick orange line, mould cavity SVG)
+- [ ] 03-04-PLAN.md — Wire scenes 1-3 into InjectionMoldingLoop (replace SceneStub indices 0-2, human verify)
 
 ### Phase 4: Scenes 4-7 and Polish
 **Goal**: The final four scenes complete the injection molding narrative, the seamless loop
@@ -109,6 +115,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-04-01 |
 | 2. Animation Infrastructure | 3/3 | Complete   | 2026-04-01 |
-| 3. Scenes 1-3 | 0/? | Not started | - |
+| 3. Scenes 1-3 | 0/4 | Not started | - |
 | 4. Scenes 4-7 and Polish | 0/? | Not started | - |
 | 5. Integration | 0/? | Not started | - |
