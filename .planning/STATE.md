@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 04-scenes-4-7-and-polish 04-04-PLAN.md
-last_updated: "2026-04-01T18:08:12.404Z"
+stopped_at: Completed 05-integration 05-02-PLAN.md
+last_updated: "2026-04-01T18:20:00Z"
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 14
-  completed_plans: 14
+  total_plans: 17
+  completed_plans: 15
 ---
 
 # Project State
@@ -20,12 +20,12 @@ See: .planning/PROJECT.md (updated 2026-04-01)
 
 **Core value:** Hero animation communicates injection molding expertise — granule to finished
 component — in a smooth, performant loop that runs on any screen without lag.
-**Current focus:** Phase 04 — Scenes 4-7 and Polish
+**Current focus:** Phase 05 — Integration
 
 ## Current Position
 
-Phase: 04 (Scenes 4-7 and Polish) — EXECUTING
-Plan: 2 of 4
+Phase: 05 (Integration) — EXECUTING
+Plan: 2 of 3
 
 ## Performance Metrics
 
@@ -58,6 +58,7 @@ Plan: 2 of 4
 | Phase 04-scenes-4-7-and-polish P01 | 4min | 2 tasks | 2 files |
 | Phase 04-scenes-4-7-and-polish P03 | 2min | 2 tasks | 1 files |
 | Phase 04-scenes-4-7-and-polish P04 | 160s | 2 tasks | 4 files |
+| Phase 05-integration P02 | 5min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -101,6 +102,8 @@ Recent decisions affecting current work:
 - [Phase 04-scenes-4-7-and-polish]: SceneStub and STUB_COLORS removed entirely — once all 7 indices map to real components, the stub scaffolding has no purpose and adds dead code
 - [Phase 04-04]: FillingScene: scaleY+transformOrigin replaces clipPath y/height — compositor-safe transform avoids SVG layout recalc per frame (PRF-02)
 - [Phase 04-04]: preserveAspectRatio=xMidYMid meet added to Scenes 1-3 (GranulesScene, MeltingScene, InjectionScene) — parity with Scenes 4-7 for consistent responsive scaling (RES-01)
+- [05-02]: cardVariants defined at module level (not inside component) — avoids object recreation on every render without needing useMemo
+- [05-02]: custom={i} prop carries stagger index into variant show function — replaces inline style animationDelay; useInView hook fully removed from all three section components
 
 ### Pending Todos
 
@@ -114,6 +117,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T18:04:12.199Z
-Stopped at: Completed 04-scenes-4-7-and-polish 04-04-PLAN.md
+Last session: 2026-04-01T18:20:00Z
+Stopped at: Completed 05-integration 05-02-PLAN.md
 Resume file: None

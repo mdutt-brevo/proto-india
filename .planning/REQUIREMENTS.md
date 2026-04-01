@@ -60,7 +60,7 @@
 ### Integration
 
 - [ ] **INT-01**: Hero.jsx updated to use new Motion animation system instead of Three.js HeroScene
-- [ ] **INT-02**: Section scroll animations converted to Motion whileInView
+- [x] **INT-02**: Section scroll animations converted to Motion whileInView
 - [ ] **INT-03**: App.jsx loader replaced with CSS/SVG GearLoader (no Three.js)
 - [ ] **INT-04**: Existing staggered text/CTA reveal animations preserved or upgraded to Motion
 
@@ -125,7 +125,7 @@
 | RES-04 | Phase 4 | Complete |
 | RES-05 | Phase 4 | Complete |
 | INT-01 | Phase 5 | Pending |
-| INT-02 | Phase 5 | Pending |
+| INT-02 | Phase 5 | Complete |
 | INT-03 | Phase 5 | Pending |
 | INT-04 | Phase 5 | Pending |
 
