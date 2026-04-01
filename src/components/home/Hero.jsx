@@ -1,28 +1,10 @@
-import { lazy, Suspense, useState, useEffect } from "react";
 import Button from "../ui/Button";
 import BlueprintOverlay from "../ui/BlueprintOverlay";
 import { STATS } from "../../data/siteData";
 import { useInView } from "../../hooks/useInView";
 
-// Lazy-load 3D scene — content renders immediately,
-// gear background fades in once Three.js is ready
-const HeroScene = lazy(() => import("../three/HeroScene"));
-
-/**
- * Wrapper that renders HeroScene and signals when it's loaded.
- * The scene starts invisible, then fades in over 1.5s once mounted.
- */
-function LazyGearBackground({ onLoaded }) {
-  useEffect(() => {
-    onLoaded();
-  }, [onLoaded]);
-
-  return <HeroScene className="w-full h-full" />;
-}
-
 export default function Hero() {
   const [statsRef, statsInView] = useInView();
-  const [sceneReady, setSceneReady] = useState(false);
 
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex flex-col">
@@ -44,21 +26,7 @@ export default function Hero() {
       {/* Blueprint grid — very faint, just enough to hint at engineering */}
       <div className="absolute inset-0 blueprint-grid-dark opacity-30" />
 
-      {/* ============================================================
-          3D GEAR LAYER: Loads lazily, fades in when ready.
-          Runs as ambient background — gears drift behind everything.
-          ============================================================ */}
-      <div
-        className={`absolute inset-0 transition-opacity duration-[2000ms] ease-out ${
-          sceneReady ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <Suspense fallback={null}>
-          <LazyGearBackground onLoaded={() => setSceneReady(true)} />
-        </Suspense>
-      </div>
-
-      {/* Gradient overlay on top of 3D — ensures text readability */}
+      {/* Gradient overlay — ensures text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0f1923]/90 via-[#0f1923]/60 to-transparent pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0f1923]/80 via-transparent to-[#0f1923]/40 pointer-events-none" />
 

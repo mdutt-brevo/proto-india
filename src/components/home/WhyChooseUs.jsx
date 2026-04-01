@@ -1,11 +1,8 @@
-import { lazy, Suspense } from "react";
 import { ShieldCheck, Clock, Users } from "lucide-react";
 import { WHY_CHOOSE_US } from "../../data/siteData";
 import { useInView } from "../../hooks/useInView";
 import SectionHeading from "../ui/SectionHeading";
 import ToolpathDivider from "../ui/ToolpathDivider";
-
-const SectionScene = lazy(() => import("../three/SectionScene"));
 
 const ICON_MAP = { ShieldCheck, Clock, Users };
 
@@ -15,11 +12,6 @@ export default function WhyChooseUs() {
   return (
     <section className="section-padding bg-white dark:bg-surface-900 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-40" />
-
-      {/* 3D Background — plastic mould open/close */}
-      <Suspense fallback={null}>
-        <SectionScene variant="mould" className="opacity-20 dark:opacity-30" />
-      </Suspense>
 
       <div className="container-max relative">
         <SectionHeading
