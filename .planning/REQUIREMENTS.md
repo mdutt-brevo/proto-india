@@ -7,11 +7,11 @@
 
 ### Dependency Cleanup
 
-- [ ] **DEP-01**: GearLoader3D replaced with CSS/SVG-only loader before Three.js removal
-- [ ] **DEP-02**: All Three.js packages removed (three, @react-three/fiber, @react-three/drei, @react-three/postprocessing)
-- [ ] **DEP-03**: All Three.js component files deleted (src/components/three/)
-- [ ] **DEP-04**: SectionScene references removed from Services, Industries, WhyChooseUs sections
-- [ ] **DEP-05**: Bundle size reduced by ~490KB from Three.js removal
+- [x] **DEP-01**: GearLoader3D replaced with CSS/SVG-only loader before Three.js removal
+- [x] **DEP-02**: All Three.js packages removed (three, @react-three/fiber, @react-three/drei, @react-three/postprocessing)
+- [x] **DEP-03**: All Three.js component files deleted (src/components/three/)
+- [x] **DEP-04**: SectionScene references removed from Services, Industries, WhyChooseUs sections
+- [x] **DEP-05**: Bundle size reduced by ~490KB from Three.js removal
 
 ### Theme & Design System
 
@@ -90,11 +90,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DEP-01 | Phase 1 | Pending |
-| DEP-02 | Phase 1 | Pending |
-| DEP-03 | Phase 1 | Pending |
-| DEP-04 | Phase 1 | Pending |
-| DEP-05 | Phase 1 | Pending |
+| DEP-01 | Phase 1 | Complete |
+| DEP-02 | Phase 1 | Complete |
+| DEP-03 | Phase 1 | Complete |
+| DEP-04 | Phase 1 | Complete |
+| DEP-05 | Phase 1 | Complete |
 | THM-01 | Phase 1 | Pending |
 | THM-02 | Phase 1 | Pending |
 | THM-03 | Phase 1 | Pending |
