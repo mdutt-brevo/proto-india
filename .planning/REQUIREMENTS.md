@@ -32,7 +32,7 @@
 ### Hero Animation Scenes
 
 - [ ] **HER-01**: Scene 1 — Raw Material: Granule particles falling into hopper (SVG + Motion particle system, max 40 particles on mobile)
-- [ ] **HER-02**: Scene 2 — Melting: Granules moving through barrel with heat color transition (orange-red glow via CSS gradients)
+- [x] **HER-02**: Scene 2 — Melting: Granules moving through barrel with heat color transition (orange-red glow via CSS gradients)
 - [ ] **HER-03**: Scene 3 — Injection: Molten plastic pushed through nozzle into mould cavity (pathLength animation)
 - [ ] **HER-04**: Scene 4 — Mould Filling: Semi-cutaway mould cavity filling with flow (clipPath reveal animation)
 - [ ] **HER-05**: Scene 5 — Cooling: Glow reduction, mould halves separating smoothly (color + transform transition)
@@ -106,7 +106,7 @@
 | INF-05 | Phase 2 | Complete |
 | INF-06 | Phase 2 | Complete |
 | HER-01 | Phase 3 | Pending |
-| HER-02 | Phase 3 | Pending |
+| HER-02 | Phase 3 | Complete |
 | HER-03 | Phase 3 | Pending |
 | HER-10 | Phase 3 | Pending |
 | HER-04 | Phase 4 | Pending |

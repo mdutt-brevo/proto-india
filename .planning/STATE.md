@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-animation-infrastructure 02-03-PLAN.md
-last_updated: "2026-04-01T17:20:06.675Z"
+stopped_at: Completed 03-scenes-1-3 03-03-PLAN.md
+last_updated: "2026-04-01T17:40:00Z"
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 10
+  completed_plans: 8
 ---
 
 # Project State
@@ -20,12 +20,12 @@ See: .planning/PROJECT.md (updated 2026-04-01)
 
 **Core value:** Hero animation communicates injection molding expertise — granule to finished
 component — in a smooth, performant loop that runs on any screen without lag.
-**Current focus:** Phase 02 — Animation Infrastructure
+**Current focus:** Phase 03 — Scenes 1-3
 
 ## Current Position
 
-Phase: 02 (Animation Infrastructure) — EXECUTING
-Plan: 2 of 3 (02-01 complete)
+Phase: 03 (Scenes 1-3) — EXECUTING
+Plan: 4 of 4
 
 ## Performance Metrics
 
@@ -51,6 +51,8 @@ Plan: 2 of 3 (02-01 complete)
 | Phase 01-foundation P01-02 | 20 | 2 tasks | 4 files |
 | Phase 02-animation-infrastructure P01 | 2min | 1 task | 1 file |
 | Phase 02-animation-infrastructure P03 | 5min | 2 tasks | 2 files |
+| Phase 03-scenes-1-3 P02 | 3min | 1 tasks | 1 files |
+| Phase 03-scenes-1-3 P03 | 4min | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -79,6 +81,9 @@ Recent decisions affecting current work:
 - [Phase 02-03]: key={sceneIndex} on SceneWrapper child, NOT AnimatePresence — placing it on AnimatePresence silently breaks exit animations
 - [Phase 02-03]: SceneStub intentionally inline — Phase 3 replaces by index with real scene imports; separate stub files would only be deleted
 - [Phase 02-03]: eslint-disable on m import — no-unused-vars rule cannot detect JSX member-expression usage (m.div); narrow per-line disable is documented last resort
+- [Phase 03-scenes-1-3]: SVG linearGradient cx/cy not animatable via Motion; x-translate on gradient-filled rect proxies the left-to-right heat sweep
+- [Phase 03-scenes-1-3]: Barrel glow uses Motion opacity keyframe array only — never mix CSS keyframe and Motion variants on same element
+- [Phase 03-scenes-1-3]: Per-granule delay requires inline variant objects — shared const variants cannot carry different per-item delay values
 
 ### Pending Todos
 
@@ -92,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T17:17:03.564Z
-Stopped at: Completed 02-animation-infrastructure 02-03-PLAN.md
+Last session: 2026-04-01T17:37:41.168Z
+Stopped at: Completed 03-scenes-1-3 03-02-PLAN.md
 Resume file: None
