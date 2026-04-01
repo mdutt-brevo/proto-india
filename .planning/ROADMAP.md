@@ -96,7 +96,7 @@ is verified at the Scene 7 → Scene 1 boundary, and the full animation is valid
 
 Plans:
 - [ ] 04-01-PLAN.md — Scene 4 (FillingScene: clipPath reveal) + Scene 5 (CoolingScene: color shift + mould separation)
-- [ ] 04-02-PLAN.md — Scene 6 (EjectionScene: ejector pins) + Scene 7 (ProductRevealScene: part reveal + tagline)
+- [x] 04-02-PLAN.md — Scene 6 (EjectionScene: ejector pins) + Scene 7 (ProductRevealScene: part reveal + tagline)
 - [ ] 04-03-PLAN.md — Wire scenes 4-7 into InjectionMoldingLoop + full loop human verify
 - [ ] 04-04-PLAN.md — Performance/responsive audit (60fps + 375px scaling) + human verify
 
@@ -122,5 +122,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 3/3 | Complete   | 2026-04-01 |
 | 2. Animation Infrastructure | 3/3 | Complete   | 2026-04-01 |
 | 3. Scenes 1-3 | 0/4 | Not started | - |
-| 4. Scenes 4-7 and Polish | 0/? | Not started | - |
+| 4. Scenes 4-7 and Polish | 2/4 | In Progress|  |
 | 5. Integration | 0/? | Not started | - |

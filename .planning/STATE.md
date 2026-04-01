@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-scenes-1-3 03-04-PLAN.md
-last_updated: "2026-04-01T17:43:59.453Z"
+stopped_at: Completed 04-scenes-4-7-and-polish 04-01-PLAN.md
+last_updated: "2026-04-01T17:56:12.497Z"
 progress:
   total_phases: 5
   completed_phases: 3
-  total_plans: 10
-  completed_plans: 10
+  total_plans: 14
+  completed_plans: 12
 ---
 
 # Project State
@@ -20,12 +20,12 @@ See: .planning/PROJECT.md (updated 2026-04-01)
 
 **Core value:** Hero animation communicates injection molding expertise — granule to finished
 component — in a smooth, performant loop that runs on any screen without lag.
-**Current focus:** Phase 03 — Scenes 1-3
+**Current focus:** Phase 04 — Scenes 4-7 and Polish
 
 ## Current Position
 
-Phase: 03 (Scenes 1-3) — COMPLETE
-Plan: 4 of 4 (all done)
+Phase: 04 (Scenes 4-7 and Polish) — EXECUTING
+Plan: 2 of 4
 
 ## Performance Metrics
 
@@ -54,6 +54,8 @@ Plan: 4 of 4 (all done)
 | Phase 03-scenes-1-3 P02 | 3min | 1 tasks | 1 files |
 | Phase 03-scenes-1-3 P03 | 4min | 1 tasks | 1 files |
 | Phase 03-scenes-1-3 P04 | 5min | 1 tasks | 1 files |
+| Phase 04-scenes-4-7 P02 | 4min | 2 tasks | 2 files |
+| Phase 04-scenes-4-7-and-polish P01 | 4min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -89,6 +91,11 @@ Recent decisions affecting current work:
 - [03-03]: pathLength is the only stroke-draw mechanism in this codebase — stroke-dasharray/stroke-dashoffset must never be used manually when Motion is present
 - [03-03]: initial/animate on root m.svg only; all children propagate via variants inheritance — established scene animation pattern
 - [Phase 03-scenes-1-3]: Conditional JSX over SCENES array for partial scene wiring — Phase 4 scenes absent, array would need nulls; explicit index conditionals are clearer
+- [04-02]: m.g used to group housing shapes in ProductRevealScene so scale transform applies from shared center — individual rects cannot share transform-origin without a group
+- [04-02]: taglineVariant delay:0.8 places text after housing and accent are stable — prevents text competing visually with the part reveal
+- [04-02]: Loop seam handled entirely by SceneWrapper AnimatePresence exit — ProductRevealScene needs no exit variant; comment documents this explicitly in the file
+- [Phase 04-01]: FillingScene uses clipPath rect y/height animation — orange fill rect is static and always full-size; only the visible clip window grows
+- [Phase 04-01]: CoolingScene fill keyframe uses times:[0, 0.3, 1] so color holds orange for first 30% of 1.2s, then cools to surfacePrimary; mould separation fires at delay=0.9 after color shift is 60% complete
 
 ### Pending Todos
 
@@ -102,6 +109,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T17:40:35.267Z
-Stopped at: Completed 03-scenes-1-3 03-04-PLAN.md
+Last session: 2026-04-01T17:56:12.494Z
+Stopped at: Completed 04-scenes-4-7-and-polish 04-01-PLAN.md
 Resume file: None

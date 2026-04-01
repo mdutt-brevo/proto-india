@@ -34,12 +34,12 @@
 - [ ] **HER-01**: Scene 1 — Raw Material: Granule particles falling into hopper (SVG + Motion particle system, max 40 particles on mobile)
 - [x] **HER-02**: Scene 2 — Melting: Granules moving through barrel with heat color transition (orange-red glow via CSS gradients)
 - [x] **HER-03**: Scene 3 — Injection: Molten plastic pushed through nozzle into mould cavity (pathLength animation)
-- [ ] **HER-04**: Scene 4 — Mould Filling: Semi-cutaway mould cavity filling with flow (clipPath reveal animation)
-- [ ] **HER-05**: Scene 5 — Cooling: Glow reduction, mould halves separating smoothly (color + transform transition)
-- [ ] **HER-06**: Scene 6 — Ejection: Ejector pins push finished part out (transform + opacity sequence)
-- [ ] **HER-07**: Scene 7 — Product Reveal: Final product with brand line "Precision in Every Moulded Part" (scale + fade reveal)
-- [ ] **HER-08**: Seamless loop — Scene 7 exit transitions smoothly back to Scene 1 initial state
-- [ ] **HER-09**: Total loop duration 10–14 seconds with locked SCENE_DURATIONS constants
+- [x] **HER-04**: Scene 4 — Mould Filling: Semi-cutaway mould cavity filling with flow (clipPath reveal animation)
+- [x] **HER-05**: Scene 5 — Cooling: Glow reduction, mould halves separating smoothly (color + transform transition)
+- [x] **HER-06**: Scene 6 — Ejection: Ejector pins push finished part out (transform + opacity sequence)
+- [x] **HER-07**: Scene 7 — Product Reveal: Final product with brand line "Precision in Every Moulded Part" (scale + fade reveal)
+- [x] **HER-08**: Seamless loop — Scene 7 exit transitions smoothly back to Scene 1 initial state
+- [x] **HER-09**: Total loop duration 10–14 seconds with locked SCENE_DURATIONS constants
 - [x] **HER-10**: All scene SVGs inline as JSX components (required for Motion pathLength animations)
 
 ### Performance
@@ -109,12 +109,12 @@
 | HER-02 | Phase 3 | Complete |
 | HER-03 | Phase 3 | Complete |
 | HER-10 | Phase 3 | Complete |
-| HER-04 | Phase 4 | Pending |
-| HER-05 | Phase 4 | Pending |
-| HER-06 | Phase 4 | Pending |
-| HER-07 | Phase 4 | Pending |
-| HER-08 | Phase 4 | Pending |
-| HER-09 | Phase 4 | Pending |
+| HER-04 | Phase 4 | Complete |
+| HER-05 | Phase 4 | Complete |
+| HER-06 | Phase 4 | Complete |
+| HER-07 | Phase 4 | Complete |
+| HER-08 | Phase 4 | Complete |
+| HER-09 | Phase 4 | Complete |
 | PRF-01 | Phase 4 | Pending |
 | PRF-02 | Phase 4 | Pending |
 | PRF-03 | Phase 4 | Pending |
