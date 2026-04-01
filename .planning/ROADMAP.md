@@ -92,7 +92,13 @@ is verified at the Scene 7 → Scene 1 boundary, and the full animation is valid
   3. Total loop duration is 10-14 seconds as measured in-browser
   4. On a 375px viewport the hero animation scales without overflow, and hero text remains readable over it
   5. Chrome DevTools Performance panel shows no frames exceeding 16ms during a full loop
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Scene 4 (FillingScene: clipPath reveal) + Scene 5 (CoolingScene: color shift + mould separation)
+- [ ] 04-02-PLAN.md — Scene 6 (EjectionScene: ejector pins) + Scene 7 (ProductRevealScene: part reveal + tagline)
+- [ ] 04-03-PLAN.md — Wire scenes 4-7 into InjectionMoldingLoop + full loop human verify
+- [ ] 04-04-PLAN.md — Performance/responsive audit (60fps + 375px scaling) + human verify
 
 ### Phase 5: Integration
 **Goal**: InjectionMoldingLoop is wired into the live Hero.jsx and all remaining Three.js
