@@ -24,7 +24,7 @@
 
 - [x] **INF-01**: LazyMotion with domAnimation features configured as app-wide provider
 - [x] **INF-02**: Motion animation tokens file (motionTokens.js) with shared durations, easings, spring configs
-- [ ] **INF-03**: useMoldingLoop custom hook — scene index state machine with SCENE_DURATIONS array
+- [x] **INF-03**: useMoldingLoop custom hook — scene index state machine with SCENE_DURATIONS array
 - [ ] **INF-04**: SceneWrapper component with AnimatePresence mode="wait" orchestration
 - [x] **INF-05**: InjectionMoldingStatic component — reduced-motion fallback (static final-frame SVG)
 - [x] **INF-06**: useReducedMotion integration — OS-level motion preference respected
@@ -101,7 +101,7 @@
 | THM-04 | Phase 1 | Complete |
 | INF-01 | Phase 1 | Complete |
 | INF-02 | Phase 1 | Complete |
-| INF-03 | Phase 2 | Pending |
+| INF-03 | Phase 2 | Complete |
 | INF-04 | Phase 2 | Pending |
 | INF-05 | Phase 2 | Complete |
 | INF-06 | Phase 2 | Complete |

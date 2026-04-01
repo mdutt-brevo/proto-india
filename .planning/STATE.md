@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-animation-infrastructure 02-02-PLAN.md
-last_updated: "2026-04-01T17:11:14.363Z"
+stopped_at: Completed 02-animation-infrastructure 02-01-PLAN.md
+last_updated: "2026-04-01T17:10:33Z"
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 4
 ---
 
 # Project State
@@ -25,7 +25,7 @@ component — in a smooth, performant loop that runs on any screen without lag.
 ## Current Position
 
 Phase: 02 (Animation Infrastructure) — EXECUTING
-Plan: 1 of 3
+Plan: 2 of 3 (02-01 complete)
 
 ## Performance Metrics
 
@@ -49,7 +49,7 @@ Plan: 1 of 3
 *Updated after each plan completion*
 | Phase 01-foundation P03 | 74s | 2 tasks | 2 files |
 | Phase 01-foundation P01-02 | 20 | 2 tasks | 4 files |
-| Phase 02-animation-infrastructure P02 | 2 | 1 tasks | 1 files |
+| Phase 02-animation-infrastructure P01 | 2min | 1 task | 1 file |
 
 ## Accumulated Context
 
@@ -73,6 +73,8 @@ Recent decisions affecting current work:
 - [Phase 01-02]: All :is(.dark) wrappers removed from index.css — permanently active with static dark class, redundant
 - [Phase 02-animation-infrastructure]: InjectionMoldingStatic: outer div carries role=img; svg is aria-hidden to prevent screen-reader double-announcement
 - [Phase 02-animation-infrastructure]: No useReducedMotion() in static component — orchestrator (Plan 03) makes branch decision; component stays unconditionally dependency-free
+- [02-01]: useMoldingLoop SCENE_COUNT derived from SCENE_DURATIONS.length — prevents drift when motionTokens.js changes
+- [02-01]: useReducedMotion null treated as false — animate until OS explicitly signals stop
 
 ### Pending Todos
 
@@ -86,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-01T17:11:14.361Z
-Stopped at: Completed 02-animation-infrastructure 02-02-PLAN.md
+Last session: 2026-04-01T17:10:33Z
+Stopped at: Completed 02-animation-infrastructure 02-01-PLAN.md
 Resume file: None
