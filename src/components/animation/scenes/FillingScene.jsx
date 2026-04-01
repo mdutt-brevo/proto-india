@@ -1,13 +1,11 @@
 // src/components/animation/scenes/FillingScene.jsx
 // Scene 4 — Mould Filling: molten plastic rises through the cavity from the gate.
 //
-// Design intent: a clipPath rect grows upward from cavity bottom to top,
-// revealing a static orange fill rect beneath — creating the illusion of
-// liquid plastic filling the mould under injection pressure.
+// Design intent: orange fill rect grows upward (liquid rising) inside the mould cavity.
 //
-// Animation pattern: clipPath reveal (clip rect y/height animate, not fill opacity).
-// clipPath + clipPath content are inside <defs>; the orange fill rect sits below
-// and is revealed through the growing clip window.
+// Animation pattern: scaleY 0→1 with transformOrigin="bottom center" on the fill rect.
+// This is compositor-safe (GPU transform only). The previous clipPath y/height approach
+// triggered main-thread SVG layout recalc per frame and was replaced in PRF-02 audit.
 //
 // Integration contract:
 //   - Receives NO props — InjectionMoldingLoop mounts as <FillingScene />
@@ -33,15 +31,19 @@ const frameVariant = {
   visible: { opacity: 1, transition: { duration: 0.35, ease: "easeOut" } },
 };
 
-// ── Clip rect (fill reveal) ──────────────────────────────────────────────────
-// The clip rect starts at cavity bottom (y=215, height=0) and grows upward
-// (y=85, height=130) over 1.4s, revealing the static orange fill rect below.
+// ── Fill reveal variant ──────────────────────────────────────────────────────
+// PRF-02 compliance: SVG rect y/height animation (inside a clipPath) forces
+// main-thread layout recalc per frame. Replaced with scaleY + transformOrigin
+// on the fill rect directly — compositor-safe transform only.
+//
+// scaleY: 0→1 with transformOrigin="bottom center" grows the rect upward,
+// matching the original clipPath "liquid rising" visual without layout cost.
 // delay: 0.3 — mould frame shapes are visible before the fill starts.
-const clipRectVariant = {
-  hidden: { y: 215, height: 0 },
+const fillRevealVariant = {
+  hidden: { scaleY: 0, opacity: 0.9 },
   visible: {
-    y: 85,
-    height: 130,
+    scaleY: 1,
+    opacity: 0.9,
     transition: { duration: 1.4, ease: EASE_OUT_EXPO, delay: 0.3 },
   },
 };
@@ -61,19 +63,10 @@ export default function FillingScene() {
       initial="hidden"
       animate="visible"
     >
-      {/* ── Definitions ───────────────────────────────────────────────────── */}
-      {/* clipPath "fillClip" controls what part of the orange fill rect is visible.
-          The m.rect inside grows from y=215,h=0 → y=85,h=130 over 1.4s,
-          revealing the fill from bottom to top (liquid rising). */}
-      <defs>
-        <clipPath id="fillClip">
-          <m.rect
-            x="155"
-            width="90"
-            variants={clipRectVariant}
-          />
-        </clipPath>
-      </defs>
+      {/* ── No clipPath needed — fill reveal uses scaleY transform ─────────── */}
+      {/* PRF-02: clipPath y/height animation was replaced with scaleY on the
+          fill rect itself, eliminating the SVG attribute animation that triggered
+          main-thread layout recalc. The <defs> block is intentionally removed. */}
 
       {/* ── Mould outer block ──────────────────────────────────────────────── */}
       {/* Large rectangular block — represents the two-half injection mould */}
@@ -129,18 +122,19 @@ export default function FillingScene() {
       />
 
       {/* ════════════════════════════════════════════════════════════════════ */}
-      {/* ORANGE FILL RECT — main animation event (via clipPath reveal)       */}
-      {/* Always present at full cavity size; only the visible area grows.    */}
+      {/* ORANGE FILL RECT — main animation event (via scaleY transform)      */}
+      {/* scaleY: 0→1, transformOrigin: bottom center — grows upward like     */}
+      {/* liquid rising. Compositor-safe: no SVG attribute mutation.          */}
       {/* fill is a static SVG attribute — no color animation here.           */}
-      {/* clipPath="url(#fillClip)" restricts what portion is rendered.       */}
       {/* ════════════════════════════════════════════════════════════════════ */}
-      <rect
+      <m.rect
         x="155"
         y="85"
         width="90"
         height="130"
         fill={COLOR.accentOrange}
-        clipPath="url(#fillClip)"
+        style={{ transformOrigin: "bottom center" }}
+        variants={fillRevealVariant}
       />
     </m.svg>
   );
