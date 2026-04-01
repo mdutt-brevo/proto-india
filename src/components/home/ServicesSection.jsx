@@ -1,28 +1,29 @@
-import { lazy, Suspense } from "react";
 import {
   PenTool, Layers, Cog, Wrench, Factory, Lightbulb, ArrowRight,
 } from "lucide-react";
+import { m } from "motion/react";
 import { Link } from "react-router-dom";
 import { SERVICES } from "../../data/siteData";
-import { useInView } from "../../hooks/useInView";
+import { EASE_SPRING_DEFAULT } from "../../lib/motionTokens";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 
-const SectionScene = lazy(() => import("../three/SectionScene"));
-
 const ICON_MAP = { PenTool, Layers, Cog, Wrench, Factory, Lightbulb };
 
-export default function ServicesSection() {
-  const [ref, isInView] = useInView();
+// scale-in equivalent: subtle scale-up from 0.85, matching Tailwind scaleIn keyframe
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.85 },
+  show: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { ...EASE_SPRING_DEFAULT, delay: i * 0.1 },
+  }),
+};
 
+export default function ServicesSection() {
   return (
     <section className="section-padding bg-surface-50 dark:bg-surface-900/80 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-30" />
-
-      {/* 3D Background — CNC forge with sparks */}
-      <Suspense fallback={null}>
-        <SectionScene variant="forge" className="opacity-15 dark:opacity-25" />
-      </Suspense>
 
       <div className="container-max relative">
         <SectionHeading
@@ -30,17 +31,20 @@ export default function ServicesSection() {
           subtitle="Comprehensive tooling solutions from design to production"
         />
 
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((service, i) => {
             const Icon = ICON_MAP[service.icon];
             return (
-              <div
+              <m.div
                 key={service.id}
-                className={`group bg-white dark:bg-white/[0.04] dark:backdrop-blur-sm rounded-2xl overflow-hidden
+                variants={cardVariants}
+                custom={i}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                className="group bg-white dark:bg-white/[0.04] dark:backdrop-blur-sm rounded-2xl overflow-hidden
                   border border-surface-100 dark:border-white/10
-                  card-hover relative
-                  ${isInView ? "animate-scale-in" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.1}s` }}
+                  card-hover relative"
               >
                 <div className="relative h-40 overflow-hidden">
                   <img
@@ -91,7 +95,7 @@ export default function ServicesSection() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              </m.div>
             );
           })}
         </div>

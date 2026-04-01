@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
-import { DarkModeProvider } from "./hooks/useDarkMode";
+import { LazyMotion, domAnimation } from "motion/react";
+import GearLoader from "./components/ui/GearLoader";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -22,25 +23,9 @@ function ScrollToTop() {
   return null;
 }
 
-// 3D interlocking gear animation for page loading
-// Falls back to SVG gear if 3D takes time to initialize
-const GearLoader3D = lazy(() => import("./components/three/GearLoader3D"));
-const GearLoaderSVG = lazy(() => import("./components/ui/GearLoader"));
-
+// SVG gear animation for page loading — no Three.js dependency
 function PageLoader() {
-  return (
-    <Suspense
-      fallback={
-        <div className="min-h-[60vh] flex items-center justify-center">
-          <div className="w-8 h-8 border-3 border-primary-500 border-t-transparent rounded-full animate-spin" />
-        </div>
-      }
-    >
-      <Suspense fallback={<GearLoaderSVG />}>
-        <GearLoader3D />
-      </Suspense>
-    </Suspense>
-  );
+  return <GearLoader />;
 }
 
 function AppLayout() {
@@ -73,10 +58,10 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <DarkModeProvider>
+    <LazyMotion features={domAnimation}>
       <BrowserRouter>
         <AppLayout />
       </BrowserRouter>
-    </DarkModeProvider>
+    </LazyMotion>
   );
 }

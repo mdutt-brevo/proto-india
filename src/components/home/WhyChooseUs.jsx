@@ -1,25 +1,26 @@
-import { lazy, Suspense } from "react";
 import { ShieldCheck, Clock, Users } from "lucide-react";
+import { m } from "motion/react";
 import { WHY_CHOOSE_US } from "../../data/siteData";
-import { useInView } from "../../hooks/useInView";
+import { EASE_SPRING_DEFAULT } from "../../lib/motionTokens";
 import SectionHeading from "../ui/SectionHeading";
 import ToolpathDivider from "../ui/ToolpathDivider";
 
-const SectionScene = lazy(() => import("../three/SectionScene"));
-
 const ICON_MAP = { ShieldCheck, Clock, Users };
 
-export default function WhyChooseUs() {
-  const [ref, isInView] = useInView();
+const cardVariants = {
+  hidden: { opacity: 0, y: -20, scale: 1.15 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { ...EASE_SPRING_DEFAULT, delay: i * 0.15 },
+  }),
+};
 
+export default function WhyChooseUs() {
   return (
     <section className="section-padding bg-white dark:bg-surface-900 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-40" />
-
-      {/* 3D Background — plastic mould open/close */}
-      <Suspense fallback={null}>
-        <SectionScene variant="mould" className="opacity-20 dark:opacity-30" />
-      </Suspense>
 
       <div className="container-max relative">
         <SectionHeading
@@ -27,19 +28,22 @@ export default function WhyChooseUs() {
           subtitle="We combine technical expertise with commitment to quality and customer satisfaction"
         />
 
-        <div ref={ref} className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {WHY_CHOOSE_US.map((item, i) => {
             const Icon = ICON_MAP[item.icon];
             return (
-              <div
+              <m.div
                 key={item.title}
-                className={`group text-center p-8 rounded-2xl border border-surface-100 dark:border-white/10
+                variants={cardVariants}
+                custom={i}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                className="group text-center p-8 rounded-2xl border border-surface-100 dark:border-white/10
                   hover:border-primary-100 dark:hover:border-primary-500/30
                   hover:shadow-xl hover:shadow-primary-500/5 dark:hover:shadow-primary-500/10
                   transition-all duration-300 relative overflow-hidden
-                  metallic-surface dark:bg-white/[0.03] dark:backdrop-blur-sm
-                  ${isInView ? "animate-stamp-in" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.15}s` }}
+                  metallic-surface dark:bg-white/[0.03] dark:backdrop-blur-sm"
               >
                 {/* Corner brackets */}
                 <svg className="absolute top-3 left-3 w-6 h-6 text-primary-500/10 dark:text-primary-400/15" viewBox="0 0 24 24">
@@ -60,7 +64,7 @@ export default function WhyChooseUs() {
                 </p>
 
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-500 via-amber-400 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              </m.div>
             );
           })}
         </div>
