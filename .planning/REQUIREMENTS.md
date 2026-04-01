@@ -90,50 +90,50 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DEP-01 | — | Pending |
-| DEP-02 | — | Pending |
-| DEP-03 | — | Pending |
-| DEP-04 | — | Pending |
-| DEP-05 | — | Pending |
-| THM-01 | — | Pending |
-| THM-02 | — | Pending |
-| THM-03 | — | Pending |
-| THM-04 | — | Pending |
-| INF-01 | — | Pending |
-| INF-02 | — | Pending |
-| INF-03 | — | Pending |
-| INF-04 | — | Pending |
-| INF-05 | — | Pending |
-| INF-06 | — | Pending |
-| HER-01 | — | Pending |
-| HER-02 | — | Pending |
-| HER-03 | — | Pending |
-| HER-04 | — | Pending |
-| HER-05 | — | Pending |
-| HER-06 | — | Pending |
-| HER-07 | — | Pending |
-| HER-08 | — | Pending |
-| HER-09 | — | Pending |
-| HER-10 | — | Pending |
-| PRF-01 | — | Pending |
-| PRF-02 | — | Pending |
-| PRF-03 | — | Pending |
-| PRF-04 | — | Pending |
-| RES-01 | — | Pending |
-| RES-02 | — | Pending |
-| RES-03 | — | Pending |
-| RES-04 | — | Pending |
-| RES-05 | — | Pending |
-| INT-01 | — | Pending |
-| INT-02 | — | Pending |
-| INT-03 | — | Pending |
-| INT-04 | — | Pending |
+| DEP-01 | Phase 1 | Pending |
+| DEP-02 | Phase 1 | Pending |
+| DEP-03 | Phase 1 | Pending |
+| DEP-04 | Phase 1 | Pending |
+| DEP-05 | Phase 1 | Pending |
+| THM-01 | Phase 1 | Pending |
+| THM-02 | Phase 1 | Pending |
+| THM-03 | Phase 1 | Pending |
+| THM-04 | Phase 1 | Pending |
+| INF-01 | Phase 1 | Pending |
+| INF-02 | Phase 1 | Pending |
+| INF-03 | Phase 2 | Pending |
+| INF-04 | Phase 2 | Pending |
+| INF-05 | Phase 2 | Pending |
+| INF-06 | Phase 2 | Pending |
+| HER-01 | Phase 3 | Pending |
+| HER-02 | Phase 3 | Pending |
+| HER-03 | Phase 3 | Pending |
+| HER-10 | Phase 3 | Pending |
+| HER-04 | Phase 4 | Pending |
+| HER-05 | Phase 4 | Pending |
+| HER-06 | Phase 4 | Pending |
+| HER-07 | Phase 4 | Pending |
+| HER-08 | Phase 4 | Pending |
+| HER-09 | Phase 4 | Pending |
+| PRF-01 | Phase 4 | Pending |
+| PRF-02 | Phase 4 | Pending |
+| PRF-03 | Phase 4 | Pending |
+| PRF-04 | Phase 4 | Pending |
+| RES-01 | Phase 4 | Pending |
+| RES-02 | Phase 4 | Pending |
+| RES-03 | Phase 4 | Pending |
+| RES-04 | Phase 4 | Pending |
+| RES-05 | Phase 4 | Pending |
+| INT-01 | Phase 5 | Pending |
+| INT-02 | Phase 5 | Pending |
+| INT-03 | Phase 5 | Pending |
+| INT-04 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 38 total
-- Mapped to phases: 0
-- Unmapped: 38 ⚠️
+- Mapped to phases: 38
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-04-01*
-*Last updated: 2026-04-01 after initial definition*
+*Last updated: 2026-04-01 after roadmap creation*
