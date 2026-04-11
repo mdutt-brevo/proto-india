@@ -17,11 +17,7 @@ export default function Testimonials() {
         overlay="bg-black/75"
       />
 
-      {/* Blueprint grid on top of video */}
-      <div className="absolute inset-0 blueprint-grid-dark opacity-40" />
-
-      {/* Riveted edge */}
-      <div className="absolute top-0 left-0 right-0 riveted-edge" />
+      {/* No separate blueprint grid or riveted edge — page-level background handles this */}
 
       <div className="container-max relative">
         <SectionHeading

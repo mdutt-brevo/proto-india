@@ -132,7 +132,7 @@ export default function FillingScene() {
         y="85"
         width="90"
         height="130"
-        fill={COLOR.accentOrange}
+        fill={COLOR.accentCopper}
         style={{ transformOrigin: "bottom center" }}
         variants={fillRevealVariant}
       />

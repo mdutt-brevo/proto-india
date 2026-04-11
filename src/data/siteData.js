@@ -71,7 +71,7 @@ export const SERVICES = [
     ],
     capabilities: "SolidWorks, Creo, CATIA, AutoCAD",
     icon: "PenTool",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-copper-500 to-copper-700",
     image: "/assets/services/injection-mould-design.webp",
   },
   {
@@ -87,7 +87,7 @@ export const SERVICES = [
     ],
     capabilities: "Up to 500 ton mould capacity",
     icon: "Layers",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-slate-500 to-slate-700",
     image: "/assets/services/injection-mould-manufacturing.webp",
   },
   {
@@ -103,7 +103,7 @@ export const SERVICES = [
     ],
     capabilities: "Steel, aluminum, copper, exotic alloys",
     icon: "Cog",
-    color: "from-orange-500 to-red-500",
+    color: "from-copper-600 to-copper-800",
     image: "/assets/services/cnc-machining.webp",
   },
   {
@@ -119,7 +119,7 @@ export const SERVICES = [
     ],
     capabilities: "All mould types and sizes",
     icon: "Wrench",
-    color: "from-violet-500 to-purple-600",
+    color: "from-iron-500 to-iron-700",
     image: "/assets/services/mould-repair.webp",
   },
   {
@@ -135,7 +135,7 @@ export const SERVICES = [
     ],
     capabilities: "Thermoplastics & engineering plastics",
     icon: "Factory",
-    color: "from-cyan-500 to-blue-600",
+    color: "from-slate-600 to-iron-700",
     image: "/assets/services/injection-molding-production.webp",
   },
   {
@@ -151,7 +151,7 @@ export const SERVICES = [
     ],
     capabilities: "Full project management",
     icon: "Lightbulb",
-    color: "from-amber-500 to-orange-600",
+    color: "from-copper-400 to-copper-600",
     image: "/assets/services/product-development.webp",
   },
 ];

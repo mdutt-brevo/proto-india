@@ -29,12 +29,12 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isTransparent
           ? "bg-transparent"
-          : "bg-white/95 dark:bg-surface-900/95 backdrop-blur-md shadow-lg shadow-black/[0.04] dark:shadow-black/20"
+          : "bg-iron-900/70 backdrop-blur-md"
       }`}
     >
       {/* Thin accent line — hidden when transparent */}
       <div
-        className={`h-0.5 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 transition-opacity duration-300 ${
+        className={`h-0.5 bg-gradient-to-r from-copper-700 via-copper-500 to-copper-700 transition-opacity duration-300 ${
           isTransparent ? "opacity-0" : "opacity-100"
         }`}
       />
@@ -42,23 +42,19 @@ export default function Navbar() {
       <nav className="container-max flex items-center justify-between h-16 lg:h-[72px] px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-md shadow-primary-500/20">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-copper-500 to-copper-700 flex items-center justify-center shadow-md shadow-copper-500/20">
             <span className="text-white font-heading font-extrabold text-sm tracking-tight">
               {COMPANY.shortName}
             </span>
           </div>
           <div className="leading-none">
             <span
-              className={`font-heading font-extrabold text-lg tracking-tight transition-colors duration-300 ${
-                isTransparent ? "text-white" : "text-surface-900 dark:text-white"
-              }`}
+              className="font-heading font-extrabold text-lg tracking-tight text-white"
             >
               {COMPANY.name.split(" ")[0].toUpperCase()}
             </span>
             <span
-              className={`block text-[10px] font-semibold tracking-[0.2em] uppercase transition-colors duration-300 ${
-                isTransparent ? "text-slate-400" : "text-primary-500 dark:text-primary-400"
-              }`}
+              className="block text-[10px] font-semibold tracking-[0.2em] uppercase text-copper-400"
             >
               {COMPANY.name.split(" ")[1]}
             </span>
@@ -73,12 +69,8 @@ export default function Navbar() {
                 to={link.href}
                 className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                   location.pathname === link.href
-                    ? isTransparent
-                      ? "text-white bg-white/10"
-                      : "text-primary-500 bg-primary-50 dark:bg-primary-500/10"
-                    : isTransparent
-                      ? "text-white/70 hover:text-white hover:bg-white/5"
-                      : "text-surface-800 dark:text-white/70 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-surface-50 dark:hover:bg-white/5"
+                    ? "text-copper-400 bg-white/10"
+                    : "text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
                 {link.label}
@@ -102,11 +94,7 @@ export default function Navbar() {
         {/* Mobile: Menu Toggle */}
         <div className="lg:hidden flex items-center gap-2">
           <button
-            className={`p-2 -mr-2 rounded-lg transition-colors ${
-              isTransparent
-                ? "text-white hover:bg-white/10"
-                : "text-surface-800 dark:text-white hover:bg-surface-50 dark:hover:bg-white/5"
-            }`}
+            className="p-2 -mr-2 rounded-lg transition-colors text-white hover:bg-white/10"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
             id="nav-mobile-toggle"
@@ -118,7 +106,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-surface-100 dark:border-white/10 bg-white dark:bg-surface-900 animate-fade-in">
+        <div className="lg:hidden border-t border-white/10 bg-iron-900/95 backdrop-blur-md animate-fade-in">
           <div className="px-4 py-4 space-y-1">
             {NAV_LINKS.map((link) => (
               <Link
@@ -127,14 +115,14 @@ export default function Navbar() {
                 className={`block px-3 py-2.5 rounded-lg text-sm font-medium
                   ${
                     location.pathname === link.href
-                      ? "text-primary-500 bg-primary-50 dark:bg-primary-500/10"
-                      : "text-surface-800 dark:text-white/70 hover:bg-surface-50 dark:hover:bg-white/5"
+                      ? "text-copper-400 bg-white/10"
+                      : "text-white/70 hover:text-white hover:bg-white/5"
                   }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-surface-100 dark:border-white/10 mt-3">
+            <div className="pt-3 border-t border-white/10 mt-3">
               <Button
                 href="/quote"
                 variant="accent"

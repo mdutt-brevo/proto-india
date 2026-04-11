@@ -10,7 +10,8 @@
     -webkit-font-smoothing: antialiased;
   }
   body {
-    @apply font-body text-white/90 bg-surface-900;
+    @apply font-body text-white/90;
+    background-color: #0f1923;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold;
@@ -19,12 +20,7 @@
 
 @layer components {
   /* ============================================================
-     SEMANTIC THEME UTILITIES — Single-source dark mode tokens
-     Prefix: th- (theme-aware hue)
-     ============================================================
-     These classes bundle light + dark styles so page authors never
-     need to remember the `dark:` counterpart. Change them HERE and
-     every consumer updates automatically.
+     SEMANTIC THEME UTILITIES — Iron + Copper palette
      ============================================================ */
 
   /* ── Text Hierarchy ──────────────────────────────────────────── */
@@ -37,11 +33,14 @@
   .th-ghost          { @apply text-white/30; }
 
   /* ── Surfaces ────────────────────────────────────────────────── */
-  .th-bg-page        { @apply bg-surface-900; }
-  .th-bg-alt         { @apply bg-surface-900/80; }
-  .th-bg-card        { @apply bg-surface-800; }
-  .th-bg-inset       { @apply bg-surface-800/50; }
-  .th-bg-primary-soft { @apply bg-primary-900/30; }
+  /* Semi-transparent so the fixed wireframe parallax layer shows
+     through as subtle atmosphere. Text readability is maintained
+     because the wireframes themselves are only 8-16% opacity. */
+  .th-bg-page        { background: transparent; }
+  .th-bg-alt         { background: rgba(15, 25, 35, 0.3); }
+  .th-bg-card        { background: rgba(26, 34, 48, 0.7); backdrop-filter: blur(8px); }
+  .th-bg-inset       { background: rgba(26, 34, 48, 0.4); }
+  .th-bg-primary-soft { background: rgba(15, 25, 35, 0.2); }
 
   /* ── Borders ─────────────────────────────────────────────────── */
   .th-border         { @apply border-white/10; }
@@ -53,41 +52,48 @@
   .th-input {
     @apply w-full px-4 py-3 rounded-lg text-sm transition-all
            border-white/15
-           bg-surface-800
+           bg-iron-800
            text-white
            placeholder:text-white/30
-           focus:outline-none focus:ring-2 focus:ring-primary-500/20
-           focus:border-primary-500;
+           focus:outline-none focus:ring-2 focus:ring-copper-500/30
+           focus:border-copper-500;
   }
   .th-select {
     @apply w-full px-4 py-3 rounded-lg text-sm transition-all appearance-none
            border-white/15
-           bg-surface-800
+           bg-iron-800
            text-white
-           focus:outline-none focus:ring-2 focus:ring-primary-500/20
-           focus:border-primary-500;
+           focus:outline-none focus:ring-2 focus:ring-copper-500/30
+           focus:border-copper-500;
   }
 
+  /* ── Buttons ─────────────────────────────────────────────────── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-primary-500 text-white font-heading font-semibold
-           px-6 py-3 rounded-lg hover:bg-primary-600 transition-all duration-200
-           hover:shadow-lg hover:shadow-primary-500/25 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2
+           bg-copper-500 text-white font-heading font-semibold
+           px-6 py-3 rounded-lg
+           hover:bg-copper-400 transition-all duration-200
+           hover:shadow-lg hover:shadow-copper-500/25 active:scale-[0.98];
   }
   .btn-accent {
-    @apply inline-flex items-center justify-center gap-2 bg-accent-500 text-white font-heading font-semibold
-           px-6 py-3 rounded-lg hover:bg-accent-600 transition-all duration-200
-           hover:shadow-lg hover:shadow-accent-500/25 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2
+           bg-copper-500 text-white font-heading font-semibold
+           px-6 py-3 rounded-lg
+           hover:bg-copper-400 transition-all duration-200
+           hover:shadow-lg hover:shadow-copper-500/25 active:scale-[0.98];
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 border-2 border-primary-500 text-primary-500
-           dark:border-primary-400 dark:text-primary-400
-           font-heading font-semibold px-6 py-3 rounded-lg hover:bg-primary-500 hover:text-white
-           dark:hover:bg-primary-400 dark:hover:text-surface-900
+    @apply inline-flex items-center justify-center gap-2
+           border-2 border-slate-400 text-slate-300
+           font-heading font-semibold px-6 py-3 rounded-lg
+           hover:bg-white/10 hover:text-white hover:border-white/40
            transition-all duration-200 active:scale-[0.98];
   }
   .btn-white {
-    @apply inline-flex items-center justify-center gap-2 bg-white text-surface-900 font-heading font-semibold
-           px-6 py-3 rounded-lg hover:bg-surface-50 transition-all duration-200
+    @apply inline-flex items-center justify-center gap-2
+           bg-white text-iron-900 font-heading font-semibold
+           px-6 py-3 rounded-lg hover:bg-slate-100
+           transition-all duration-200
            hover:shadow-lg active:scale-[0.98];
   }
   .section-padding {
@@ -101,13 +107,13 @@
   }
   .gradient-mesh {
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(100,116,139,0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.04) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 80%, rgba(100,116,139,0.03) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 50%, rgba(100,116,139,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,125,60,0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(100,116,139,0.02) 0%, transparent 50%);
   }
 
   /* ============================================================
-     INDUSTRIAL DESIGN SYSTEM — Manufacturing Aesthetic
+     INDUSTRIAL DESIGN SYSTEM — Iron + Copper
      ============================================================ */
 
   /* Blueprint Grid — engineering paper background */
@@ -120,13 +126,13 @@
     background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
   }
 
-  /* Dark blueprint variant — for dark sections */
+  /* Dark blueprint variant — slate-tinted grid lines */
   .blueprint-grid-dark {
     background-image:
-      linear-gradient(rgba(96, 165, 250, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(96, 165, 250, 0.08) 1px, transparent 1px),
-      linear-gradient(rgba(96, 165, 250, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(96, 165, 250, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
     background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
   }
 
@@ -159,7 +165,7 @@
     );
   }
 
-  /* Molten Border — animated gradient border like molten metal */
+  /* Molten Border — copper gradient animated border */
   .molten-border {
     position: relative;
     overflow: hidden;
@@ -172,11 +178,11 @@
     border-radius: inherit;
     background: linear-gradient(
       45deg,
-      #ea580c,
-      #f97316,
-      #fbbf24,
-      #f97316,
-      #ea580c
+      #8f4f27,
+      #c97d3c,
+      #e5ad66,
+      #c97d3c,
+      #8f4f27
     );
     background-size: 300% 300%;
     animation: moltenFlow 3s ease-in-out infinite;
@@ -201,7 +207,7 @@
   .dimension-line::after {
     content: "";
     position: absolute;
-    background: rgba(96, 165, 250, 0.3);
+    background: rgba(148, 163, 184, 0.3);
   }
   .dimension-line::before {
     top: 0;
@@ -223,7 +229,7 @@
   }
   .btn-accent.press-effect:active {
     transform: scale(0.94) translateY(2px);
-    box-shadow: 0 1px 4px rgba(234, 88, 12, 0.3);
+    box-shadow: 0 1px 4px rgba(201, 125, 60, 0.4);
   }
 
   /* Crosshair Marker — decorative blueprint crosshair */
@@ -234,7 +240,7 @@
   .crosshair::after {
     content: "";
     position: absolute;
-    background: rgba(96, 165, 250, 0.15);
+    background: rgba(148, 163, 184, 0.15);
   }
   .crosshair::before {
     width: 20px;
@@ -263,8 +269,8 @@
     width: 3px;
     height: 3px;
     border-radius: 50%;
-    background: #fbbf24;
-    box-shadow: 0 0 6px 2px rgba(251, 191, 36, 0.6);
+    background: #d9923e;
+    box-shadow: 0 0 6px 2px rgba(201, 125, 60, 0.6);
     animation: spark 0.8s ease-out forwards;
   }
 
@@ -272,9 +278,9 @@
   .steel-section {
     background: linear-gradient(
       180deg,
-      #111827 0%,
-      #1f2937 50%,
-      #111827 100%
+      #0a1119 0%,
+      #1a2230 50%,
+      #0a1119 100%
     );
   }
 
@@ -297,6 +303,6 @@
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { @apply bg-surface-900; }
+::-webkit-scrollbar-track { @apply bg-iron-900; }
 ::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full; }
-::-webkit-scrollbar-thumb:hover { @apply bg-primary-500/40; }
+::-webkit-scrollbar-thumb:hover { @apply bg-copper-500/40; }

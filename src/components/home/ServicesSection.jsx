@@ -4,27 +4,24 @@ import {
 import { m } from "motion/react";
 import { Link } from "react-router-dom";
 import { SERVICES } from "../../data/siteData";
-import { EASE_SPRING_DEFAULT } from "../../lib/motionTokens";
+import { REVEAL } from "../../lib/motionTokens";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 
 const ICON_MAP = { PenTool, Layers, Cog, Wrench, Factory, Lightbulb };
 
-// scale-in equivalent: subtle scale-up from 0.85, matching Tailwind scaleIn keyframe
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.85 },
+  hidden: { opacity: 0, y: 12 },
   show: (i) => ({
     opacity: 1,
-    scale: 1,
-    transition: { ...EASE_SPRING_DEFAULT, delay: i * 0.1 },
+    y: 0,
+    transition: { ...REVEAL, delay: i * 0.08 },
   }),
 };
 
 export default function ServicesSection() {
   return (
-    <section className="section-padding bg-surface-50 dark:bg-surface-900/80 relative overflow-hidden transition-colors duration-300">
-      <div className="absolute inset-0 blueprint-grid dark:blueprint-grid-dark opacity-30" />
-
+    <section className="section-padding relative overflow-hidden">
       <div className="container-max relative">
         <SectionHeading
           title="Our Services"
@@ -42,9 +39,8 @@ export default function ServicesSection() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.2 }}
-                className="group bg-white dark:bg-white/[0.04] dark:backdrop-blur-sm rounded-2xl overflow-hidden
-                  border border-surface-100 dark:border-white/10
-                  card-hover relative"
+                className="group bg-white/[0.04] backdrop-blur-sm rounded-2xl overflow-hidden
+                  hover:bg-white/[0.07] card-hover relative"
               >
                 <div className="relative h-40 overflow-hidden">
                   <img
@@ -66,10 +62,10 @@ export default function ServicesSection() {
                 </div>
 
                 <div className="p-5">
-                  <h3 className="text-lg font-bold text-surface-900 dark:text-white">
+                  <h3 className="text-lg font-bold text-white">
                     {service.title}
                   </h3>
-                  <p className="mt-2 text-sm text-surface-800/60 dark:text-white/50 leading-relaxed">
+                  <p className="mt-2 text-sm text-white/50 leading-relaxed">
                     {service.shortDesc}
                   </p>
 
@@ -77,9 +73,9 @@ export default function ServicesSection() {
                     {service.features.slice(0, 3).map((f) => (
                       <li
                         key={f}
-                        className="flex items-center gap-2 text-sm text-surface-800/70 dark:text-white/60"
+                        className="flex items-center gap-2 text-sm text-white/60"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 dark:bg-primary-400 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-copper-500 dark:bg-copper-400 shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -87,14 +83,14 @@ export default function ServicesSection() {
 
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 transition-colors group/link"
+                    className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-copper-500 dark:text-copper-400 hover:text-copper-600 dark:hover:text-copper-300 transition-colors group/link"
                   >
                     Learn more
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-copper-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </m.div>
             );
           })}

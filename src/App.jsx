@@ -4,6 +4,7 @@ import { LazyMotion, domAnimation } from "motion/react";
 import GearLoader from "./components/ui/GearLoader";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import CadBackground from "./components/ui/CadBackground";
 
 // Lazy-load pages for fast initial paint
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -33,12 +34,27 @@ function AppLayout() {
   const isHome = location.pathname === "/";
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-surface-900 transition-colors duration-300">
+    <div className="flex flex-col min-h-screen relative">
       <ScrollToTop />
+
+      {/* ── Global industrial background ─────────────────────────────
+          These fixed layers create the continuous dark iron canvas
+          visible on EVERY page. Content floats above them.
+          ──────────────────────────────────────────────────────────── */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#0f1923] via-[#111d29] to-[#0a1119]" style={{ zIndex: -30 }} />
+      <div className="fixed inset-0 blueprint-grid-dark opacity-20" style={{ zIndex: -20 }} />
+      <div
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          zIndex: -20,
+          background: "radial-gradient(ellipse at 50% 30%, transparent 40%, rgba(0,0,0,0.5) 100%)",
+        }}
+      />
+      <CadBackground />
+
+      {/* ── App chrome + content ──────────────────────────────────── */}
       <Navbar />
-      {/* Home hero goes full-bleed behind the fixed navbar.
-          Other pages need top padding to clear the navbar. */}
-      <main className={`flex-1 ${isHome ? "" : "pt-[72px]"}`}>
+      <main className={`flex-1 relative ${isHome ? "" : "pt-[72px]"}`}>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />

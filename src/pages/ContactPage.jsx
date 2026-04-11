@@ -7,7 +7,7 @@ function PageHero() {
   return (
     <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
-        <p className="text-sm font-semibold text-primary-500 mb-3">Contact</p>
+        <p className="text-sm font-semibold text-copper-500 mb-3">Contact</p>
         <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Contact Us
         </h1>
@@ -39,11 +39,11 @@ function ContactInfo() {
       {items.map((item) => (
         <div key={item.label} className="th-bg-inset rounded-2xl p-5 border th-border text-center">
           <div className="w-10 h-10 mx-auto rounded-lg th-bg-primary-soft flex items-center justify-center mb-3">
-            <item.icon className="w-5 h-5 text-primary-500" />
+            <item.icon className="w-5 h-5 text-copper-500" />
           </div>
           <p className="text-xs font-semibold th-faint uppercase tracking-wider mb-1">{item.label}</p>
           {item.href ? (
-            <a href={item.href} className="text-sm font-semibold th-heading hover:text-primary-500 transition-colors">
+            <a href={item.href} className="text-sm font-semibold th-heading hover:text-copper-500 transition-colors">
               {item.value}
             </a>
           ) : (
@@ -149,7 +149,7 @@ function VisitSection() {
                 "Discuss your project requirements face-to-face",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm th-body-secondary">
-                  <span className="w-1.5 h-1.5 mt-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="w-1.5 h-1.5 mt-2 rounded-full bg-copper-500 shrink-0" />
                   {item}
                 </li>
               ))}

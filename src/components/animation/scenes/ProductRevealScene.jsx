@@ -124,7 +124,7 @@ export default function ProductRevealScene() {
       {/* brand "P" glyph accent — marks the ejection point and brand identity. */}
       <m.circle
         cx="200" cy="155" r="4"
-        fill={COLOR.accentOrange}
+        fill={COLOR.accentCopper}
         variants={accentVariant}
       />
 

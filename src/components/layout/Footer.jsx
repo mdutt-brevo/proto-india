@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-900 dark:bg-black text-white/80 relative overflow-hidden transition-colors duration-300">
+    <footer className="bg-iron-950/80 backdrop-blur-sm text-white/80 relative overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 blueprint-grid-dark opacity-40" />
 
       <div className="container-max section-padding !py-12 relative">
@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-copper-400 to-copper-600 flex items-center justify-center">
                 <span className="text-white font-heading font-extrabold text-sm">
                   {COMPANY.shortName}
                 </span>
@@ -21,7 +21,7 @@ export default function Footer() {
                 <span className="font-heading font-extrabold text-lg text-white">
                   {COMPANY.name.split(" ")[0].toUpperCase()}
                 </span>
-                <span className="block text-[10px] font-semibold text-primary-400 tracking-[0.2em] uppercase">
+                <span className="block text-[10px] font-semibold text-copper-400 tracking-[0.2em] uppercase">
                   {COMPANY.name.split(" ")[1]}
                 </span>
               </div>
@@ -31,7 +31,7 @@ export default function Footer() {
               and CNC machining services.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/10 rounded text-xs font-mono text-white/40">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span className="w-1.5 h-1.5 rounded-full bg-copper-400" />
               ISO 9001:2015 CERTIFIED
             </div>
           </div>

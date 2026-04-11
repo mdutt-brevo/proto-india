@@ -16,7 +16,7 @@ function PageHero() {
   return (
     <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
-        <p className="text-sm font-semibold text-primary-500 mb-3">Services</p>
+        <p className="text-sm font-semibold text-copper-500 mb-3">Services</p>
         <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Our Services
         </h1>
@@ -66,7 +66,7 @@ function ServiceCard({ service, index }) {
           <ul className="space-y-2">
             {service.features.map((f) => (
               <li key={f} className="flex items-center gap-2.5 text-sm th-body-secondary">
-                <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+                <Check className="w-4 h-4 text-copper-400 shrink-0" />
                 {f}
               </li>
             ))}
@@ -105,9 +105,9 @@ function ProcessSection() {
               <div key={step.step} className="flex md:flex-col items-center md:items-center gap-4 md:gap-0 flex-1 text-center relative">
                 {/* Connector line (desktop) */}
                 {i < PROCESS_STEPS.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-primary-100 dark:bg-primary-500/20" />
+                  <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-copper-100 dark:bg-copper-500/20" />
                 )}
-                <div className="relative z-10 w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center text-white font-heading font-bold shadow-lg shadow-primary-500/20 shrink-0">
+                <div className="relative z-10 w-12 h-12 rounded-full bg-copper-500 flex items-center justify-center text-white font-heading font-bold shadow-lg shadow-copper-500/20 shrink-0">
                   {step.step}
                 </div>
                 <div className="md:mt-4">
@@ -126,7 +126,7 @@ function ProcessSection() {
 function ServicesCTA() {
   const [ref, isInView] = useInView();
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-iron-800 via-iron-900 to-iron-950 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/3" />
       <div
         ref={ref}

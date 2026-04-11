@@ -13,7 +13,7 @@ export default function HomeCTA() {
       <VideoBackground
         src={VIDEOS.sparks}
         fallbackSrc={VIDEOS.sparksHD}
-        overlay="bg-gradient-to-br from-primary-600/80 via-primary-700/85 to-primary-900/90"
+        overlay="bg-gradient-to-br from-iron-800/85 via-iron-900/90 to-iron-950/95"
       />
 
       {/* Blueprint grid on top */}
@@ -33,7 +33,7 @@ export default function HomeCTA() {
         }`}
       >
         <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-mono text-white/50 border border-white/10 rounded">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse-glow" />
+          <span className="w-1.5 h-1.5 rounded-full bg-copper-400 animate-pulse-glow" />
           PROJECT INQUIRY
         </span>
 

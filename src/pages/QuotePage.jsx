@@ -7,7 +7,7 @@ function PageHero() {
   return (
     <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
-        <p className="text-sm font-semibold text-primary-500 mb-3">Quote</p>
+        <p className="text-sm font-semibold text-copper-500 mb-3">Quote</p>
         <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Request a Quote
         </h1>
@@ -106,7 +106,7 @@ function QuoteForm() {
         <label className="block text-sm font-semibold th-body mb-1.5">
           Upload CAD Drawing (STEP, IGS, PDF)
         </label>
-        <label className="flex flex-col items-center justify-center w-full h-28 rounded-lg border-2 border-dashed th-border-input hover:border-primary-400 th-bg-inset cursor-pointer transition-colors">
+        <label className="flex flex-col items-center justify-center w-full h-28 rounded-lg border-2 border-dashed th-border-input hover:border-copper-400 th-bg-inset cursor-pointer transition-colors">
           <Upload className="w-6 h-6 th-ghost mb-1" />
           <span className="text-sm th-subtle">
             {fileName || "Click to upload or drag and drop"}
@@ -149,7 +149,7 @@ function WhatsNext() {
       <div className="space-y-6">
         {steps.map((step) => (
           <div key={step.num} className="flex gap-4">
-            <div className="w-10 h-10 shrink-0 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-primary-500/20">
+            <div className="w-10 h-10 shrink-0 rounded-full bg-copper-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-copper-500/20">
               {step.num}
             </div>
             <div>
@@ -172,7 +172,7 @@ function WhatsNext() {
             "Technical support included",
           ].map((item) => (
             <li key={item} className="flex items-center gap-2 text-sm th-body-secondary">
-              <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+              <Check className="w-4 h-4 text-copper-400 shrink-0" />
               {item}
             </li>
           ))}
@@ -180,14 +180,14 @@ function WhatsNext() {
       </div>
 
       {/* Help callout */}
-      <div className="mt-6 p-4 rounded-lg th-bg-primary-soft border border-primary-100 dark:border-primary-800/50">
-        <p className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-1">Need Help?</p>
-        <p className="text-xs text-primary-600/70 dark:text-primary-400/70">
+      <div className="mt-6 p-4 rounded-lg th-bg-primary-soft border border-copper-100 dark:border-copper-800/50">
+        <p className="text-sm font-semibold text-copper-700 dark:text-copper-300 mb-1">Need Help?</p>
+        <p className="text-xs text-copper-600/70 dark:text-copper-400/70">
           Our technical team is available to answer your questions
         </p>
         <a
           href={`tel:${COMPANY.phone}`}
-          className="inline-flex items-center gap-2 mt-2 text-sm font-bold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+          className="inline-flex items-center gap-2 mt-2 text-sm font-bold text-copper-600 dark:text-copper-400 hover:text-copper-700 dark:hover:text-copper-300 transition-colors"
         >
           <Phone className="w-4 h-4" />
           Call {COMPANY.phone}

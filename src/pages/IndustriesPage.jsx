@@ -18,7 +18,7 @@ function PageHero() {
   return (
     <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
-        <p className="text-sm font-semibold text-primary-500 mb-3">Industries</p>
+        <p className="text-sm font-semibold text-copper-500 mb-3">Industries</p>
         <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Industries We Serve
         </h1>
@@ -59,7 +59,7 @@ function IndustryCards() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   <div className="absolute bottom-3 left-3 w-11 h-11 rounded-lg bg-white/90 dark:bg-surface-800/90 backdrop-blur-sm flex items-center justify-center shadow-md">
-                    <Icon className="w-6 h-6 text-primary-500" />
+                    <Icon className="w-6 h-6 text-copper-500" />
                   </div>
                 </div>
                 <div className="p-5">
@@ -95,7 +95,7 @@ function WhyIndustries() {
             return (
               <div key={item.title} className="th-bg-card rounded-2xl p-6 border th-border flex gap-4">
                 <div className="w-12 h-12 shrink-0 rounded-xl th-bg-primary-soft flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-primary-500" />
+                  <Icon className="w-6 h-6 text-copper-500" />
                 </div>
                 <div>
                   <h4 className="font-bold th-heading">{item.title}</h4>

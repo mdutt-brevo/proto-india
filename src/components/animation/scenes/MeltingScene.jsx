@@ -72,8 +72,8 @@ export default function MeltingScene() {
             The animated m.rect below sweeps this across the barrel width. */}
         <linearGradient id="heatGradient" x1="0%" y1="50%" x2="100%" y2="50%">
           <stop offset="0%"   stopColor={COLOR.baseBg}      stopOpacity="0" />
-          <stop offset="30%"  stopColor={COLOR.accentOrange} stopOpacity="0.3" />
-          <stop offset="70%"  stopColor={COLOR.accentOrange} stopOpacity="0.6" />
+          <stop offset="30%"  stopColor={COLOR.accentCopper} stopOpacity="0.3" />
+          <stop offset="70%"  stopColor={COLOR.accentCopper} stopOpacity="0.6" />
           <stop offset="100%" stopColor={COLOR.baseBg}       stopOpacity="0" />
         </linearGradient>
       </defs>
@@ -151,7 +151,7 @@ export default function MeltingScene() {
           with the structural fade-in variant on the same node. */}
       <m.rect
         x="60" y="118" width="280" height="64"
-        fill={COLOR.accentOrange}
+        fill={COLOR.accentCopper}
         rx="4"
         variants={barrelGlowVariant}
       />

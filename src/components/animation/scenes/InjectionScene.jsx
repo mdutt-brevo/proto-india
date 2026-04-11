@@ -139,7 +139,7 @@ export default function InjectionScene() {
       {/* Scale + opacity keyframe animation signals "pressure building". */}
       <m.circle
         cx="115" cy="150" r="5"
-        fill={COLOR.accentOrange}
+        fill={COLOR.accentCopper}
         variants={nozzleGlowVariant}
       />
 
@@ -148,12 +148,12 @@ export default function InjectionScene() {
       {/* Thick orange path from nozzle tip to mould gate.                    */}
       {/* pathLength 0→1 in 1.2s ease-out per user decision (HER-03).         */}
       {/* strokeWidth 5 for forceful, high-pressure feel.                     */}
-      {/* stroke={COLOR.accentOrange} is a static SVG attribute — NOT         */}
+      {/* stroke={COLOR.accentCopper} is a static SVG attribute — NOT         */}
       {/* animated through Motion variants (SVG stroke color is a repaint).   */}
       {/* ════════════════════════════════════════════════════════════════════ */}
       <m.path
         d="M 115 150 L 276 150"
-        stroke={COLOR.accentOrange}
+        stroke={COLOR.accentCopper}
         strokeWidth="5"
         strokeLinecap="round"
         fill="none"

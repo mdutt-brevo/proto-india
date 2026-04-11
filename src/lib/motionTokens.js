@@ -29,13 +29,15 @@ export const SCENE_EXIT  = { duration: 0.3, ease: EASE_IN_OUT_SINE };
 export const MICRO       = { duration: 0.15 };
 export const REVEAL      = { duration: 0.6, ease: EASE_OUT_EXPO };
 
-// ── Brand color constants ──────────────────────────────────────────────────────
+// ── Brand color constants (Iron + Copper palette) ─────────────────────────────
 // These mirror tailwind.config.js values. Motion animate() calls do not go
 // through Tailwind JIT, so hex values must be explicit here.
 export const COLOR = {
-  baseBg:         "#0f1923",
-  surfacePrimary: "#64748b",
-  accentOrange:   "#ea580c",
-  textPrimary:    "#f1f5f9",
-  textMuted:      "#94a3b8",
+  baseBg:         "#0f1923",   // iron-900
+  surfacePrimary: "#64748b",   // slate-500
+  accentCopper:   "#c97d3c",   // copper-500
+  copperLight:    "#d9923e",   // copper-400
+  copperDark:     "#b06830",   // copper-600
+  textPrimary:    "#f1f5f9",   // slate-100
+  textMuted:      "#94a3b8",   // slate-400
 };

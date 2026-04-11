@@ -4,7 +4,52 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      // ── Iron + Copper palette ────────────────────────────────────
+      // 4-color system: dark iron base, off-white text, copper accent,
+      // cool slate for wireframes/borders/secondary elements.
       colors: {
+        // Iron — dark backgrounds, surfaces, and cards
+        iron: {
+          50:  "#f8fafb",
+          100: "#eef1f5",
+          200: "#d8dde6",
+          300: "#b0b9c6",
+          400: "#7a8597",
+          500: "#556170",
+          600: "#3a4553",
+          700: "#252e3a",
+          800: "#1a2230",
+          900: "#0f1923",
+          950: "#0a1119",
+        },
+        // Copper — the sole accent. CTAs, highlights, hover states.
+        copper: {
+          50:  "#fdf6ee",
+          100: "#f9e8d0",
+          200: "#f2cfa0",
+          300: "#e5ad66",
+          400: "#d9923e",
+          500: "#c97d3c",
+          600: "#b06830",
+          700: "#8f4f27",
+          800: "#764026",
+          900: "#623522",
+        },
+        // Slate — wireframes, muted text, borders, secondary UI
+        slate: {
+          50:  "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a",
+        },
+        // Aliases — backwards compatibility for existing Tailwind classes
+        // TODO: remove these once all components are migrated
         primary: {
           50:  "#f8fafc",
           100: "#f1f5f9",
@@ -18,26 +63,21 @@ export default {
           900: "#0f172a",
         },
         accent: {
-          400: "#f97316",
-          500: "#ea580c",
-          600: "#c2410c",
+          400: "#d9923e",
+          500: "#c97d3c",
+          600: "#b06830",
         },
         surface: {
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#64748b",
-          600: "#475569",
-          700: "#334155",
-          800: "#1e293b",
-          900: "#0f172a",
-        },
-        steel: {
-          700: "#374151",
-          800: "#1f2937",
-          900: "#111827",
+          50:  "#f8fafb",
+          100: "#eef1f5",
+          200: "#d8dde6",
+          300: "#b0b9c6",
+          400: "#7a8597",
+          500: "#556170",
+          600: "#3a4553",
+          700: "#252e3a",
+          800: "#1a2230",
+          900: "#0f1923",
         },
       },
       fontFamily: {

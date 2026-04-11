@@ -16,7 +16,7 @@ function PageHero() {
   return (
     <section className="relative overflow-hidden gradient-mesh th-bg-page">
       <div className="container-max section-padding !pb-12 text-center">
-        <p className="text-sm font-semibold text-primary-500 mb-3">Gallery</p>
+        <p className="text-sm font-semibold text-copper-500 mb-3">Gallery</p>
         <h1 className="text-4xl sm:text-5xl font-extrabold th-heading leading-tight animate-slide-up">
           Our Work Gallery
         </h1>
@@ -47,7 +47,7 @@ function GalleryGrid() {
               onClick={() => setActive(f)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                 active === f
-                  ? "bg-primary-500 text-white shadow-md shadow-primary-500/20"
+                  ? "bg-copper-500 text-white shadow-md shadow-copper-500/20"
                   : "th-bg-inset th-muted hover:bg-surface-100 dark:hover:bg-white/10 border th-border-subtle"
               }`}
             >

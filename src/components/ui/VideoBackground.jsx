@@ -33,7 +33,7 @@ export default function VideoBackground({
         </video>
       ) : (
         /* Gradient fallback if video fails */
-        <div className="absolute inset-0 bg-gradient-to-br from-surface-900 via-primary-900 to-surface-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-iron-900 via-iron-950 to-iron-900" />
       )}
 
       {/* Dark overlay — ensures text readability */}

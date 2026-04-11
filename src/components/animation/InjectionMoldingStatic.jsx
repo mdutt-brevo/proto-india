@@ -41,11 +41,11 @@ export default function InjectionMoldingStatic() {
 
         {/* Gate mark — the small bump where plastic entered the mould */}
         <circle cx="200" cy="80" r="4"
-          fill={COLOR.accentOrange} opacity="0.8" />
+          fill={COLOR.accentCopper} opacity="0.8" />
 
         {/* Orange accent edge highlight — brand identity stripe */}
         <rect x="120" y="80" width="8" height="140" rx="4"
-          fill={COLOR.accentOrange} opacity="0.5" />
+          fill={COLOR.accentCopper} opacity="0.5" />
 
         {/* Brand tagline — matches HER-07 Scene 7 copy */}
         <text

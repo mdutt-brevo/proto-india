@@ -2,7 +2,7 @@
 // Scene 5 — Cooling: heat drains from the part, then the mould halves separate.
 //
 // Design intent: communicate TWO events in sequence within 2.0s:
-//   (a) color cools — part fill transitions from accentOrange to surfacePrimary
+//   (a) color cools — part fill transitions from accentCopper to surfacePrimary
 //   (b) mould halves pull apart — left half translates -30px, right +30px
 //
 // The split mould layout uses a parting line at x=200 (center of viewBox).
@@ -34,16 +34,16 @@ const frameVariant = {
 };
 
 // ── Part rect — cooling color shift ─────────────────────────────────────────
-// fill keyframe: accentOrange → accentOrange (hold) → surfacePrimary
+// fill keyframe: accentCopper → accentCopper (hold) → surfacePrimary
 // times: [0, 0.3, 1] — color holds at orange for first 30% then cools.
 // delay: 0.2 — part is visible before transition fires.
 // IMPORTANT: fill color animation is safe here because it is the ONLY
 // animated property on this element — no layout thrashing risk.
 const coolVariant = {
-  hidden: { opacity: 0, fill: COLOR.accentOrange },
+  hidden: { opacity: 0, fill: COLOR.accentCopper },
   visible: {
     opacity: 1,
-    fill: [COLOR.accentOrange, COLOR.accentOrange, COLOR.surfacePrimary],
+    fill: [COLOR.accentCopper, COLOR.accentCopper, COLOR.surfacePrimary],
     transition: {
       opacity: { duration: 0.3 },
       fill: { duration: 1.2, ease: EASE_IN_OUT_SINE, delay: 0.2, times: [0, 0.3, 1] },
@@ -120,7 +120,7 @@ export default function CoolingScene() {
 
       {/* ════════════════════════════════════════════════════════════════════ */}
       {/* PART RECT — main cooling animation event                            */}
-      {/* fill transitions accentOrange → surfacePrimary over 1.2s            */}
+      {/* fill transitions accentCopper → surfacePrimary over 1.2s            */}
       {/* Sits centered in the mould cavity at x=165, width=70                */}
       {/* ════════════════════════════════════════════════════════════════════ */}
       <m.rect

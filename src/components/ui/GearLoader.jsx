@@ -9,7 +9,7 @@ export default function GearLoader() {
       <div className="relative w-24 h-24">
         {/* Primary gear — rotates clockwise */}
         <svg
-          className="absolute top-0 left-0 w-16 h-16 text-primary-500 animate-gear-spin"
+          className="absolute top-0 left-0 w-16 h-16 text-copper-500 animate-gear-spin"
           viewBox="0 0 64 64"
           fill="currentColor"
         >
