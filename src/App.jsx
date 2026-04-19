@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
 import { LazyMotion, domAnimation } from "motion/react";
 import GearLoader from "./components/ui/GearLoader";
@@ -64,6 +64,10 @@ function AppLayout() {
             <Route path="/industries" element={<IndustriesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/quote" element={<QuotePage />} />
+            {/* Common typos / plural variants → redirect to canonical path */}
+            <Route path="/quotes" element={<Navigate to="/quote" replace />} />
+            {/* Catch-all: any unknown path goes home instead of a blank screen */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </main>
